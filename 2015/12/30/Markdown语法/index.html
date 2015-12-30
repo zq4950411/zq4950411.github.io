@@ -1,0 +1,966 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/rss2.xml" title="思路人" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.0" />
+
+
+
+
+
+
+<meta name="description" content="段落和换行和LATEX一样，用一个以上的空行代表分段，而没有空行的换行被忽略，所以允许段内强制换行单个回车，视为空格；连续回车，才能分段。回车前在行尾加两个空格，即可段内换行。
+Q:在 Markdown 文档里如何打出空行？A:直接使用 html 标签，即 &amp;lt;br /&amp;gt;Q:使文本保持原样输出A:在开头输入两个以上空格
+标题Markdown支援两种标题的语法，类 Setext 和类 at">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown语法">
+<meta property="og:url" content="http://nstimer.cn/2015/12/30/Markdown语法/index.html">
+<meta property="og:site_name" content="思路人">
+<meta property="og:description" content="段落和换行和LATEX一样，用一个以上的空行代表分段，而没有空行的换行被忽略，所以允许段内强制换行单个回车，视为空格；连续回车，才能分段。回车前在行尾加两个空格，即可段内换行。
+Q:在 Markdown 文档里如何打出空行？A:直接使用 html 标签，即 &amp;lt;br /&amp;gt;Q:使文本保持原样输出A:在开头输入两个以上空格
+标题Markdown支援两种标题的语法，类 Setext 和类 at">
+<meta property="og:updated_time" content="2015-12-30T06:57:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Markdown语法">
+<meta name="twitter:description" content="段落和换行和LATEX一样，用一个以上的空行代表分段，而没有空行的换行被忽略，所以允许段内强制换行单个回车，视为空格；连续回车，才能分段。回车前在行尾加两个空格，即可段内换行。
+Q:在 Markdown 文档里如何打出空行？A:直接使用 html 标签，即 &amp;lt;br /&amp;gt;Q:使文本保持原样输出A:在开头输入两个以上空格
+标题Markdown支援两种标题的语法，类 Setext 和类 at">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: '[object Object]',
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Markdown语法 | 思路人 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', '71785949-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?23a2895fe51647eba556e4caad6ba2ca";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">思路人</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">有时候一点点就是一大步</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Markdown语法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-12-30T14:56:07+08:00" content="2015-12-30">
+              2015-12-30
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/12/30/Markdown语法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/30/Markdown语法/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/12/30/Markdown语法/" class="leancloud_visitors" data-flag-title="Markdown语法">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="u6BB5_u843D_u548C_u6362_u884C"><a href="#u6BB5_u843D_u548C_u6362_u884C" class="headerlink" title="段落和换行"></a>段落和换行</h2><p>和LATEX一样，用一个以上的空行代表分段，而没有空行的换行被忽略，所以允许段内强制换行<br>单个回车，视为空格；连续回车，才能分段。回车前在行尾加两个空格，即可段内换行。</p>
+<p>Q:在 Markdown 文档里如何打出空行？<br>A:直接使用 html 标签，即 <code>&lt;br /&gt;</code><br>Q:使文本保持原样输出<br>A:在开头输入两个以上空格</p>
+<h2 id="u6807_u9898"><a href="#u6807_u9898" class="headerlink" title="标题"></a>标题</h2><p>Markdown支援两种标题的语法，类 Setext 和类 atx 形式。</p>
+<p>类Setext形式是用底线的形式，利用<code>=</code>（最高阶标题）和<code>-</code>（第二阶标题），例如：</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="header">This is an H1</span><br><span class="line">=============</span></span><br><span class="line"></span><br><span class="line"><span class="header">This is an H2</span><br><span class="line">-------------</span></span><br></pre></td></tr></table></figure>
+<p>任何数量的 <code>=</code> 和 <code>-</code> 都可以有效果。</p>
+<p>Atx形式则是在行首插入1至6个<code>#</code>，对应到标题1到6阶，例如:</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This is an H1</span></span><br><span class="line"><span class="comment">## This is an H2</span></span><br><span class="line"><span class="comment">###### This is an H6</span></span><br></pre></td></tr></table></figure>
+<h2 id="u5F15_u8A00"><a href="#u5F15_u8A00" class="headerlink" title="引言"></a>引言</h2><p>Markdown使用email形式的区块引言，如果你很熟悉如何在email信件中引言，你就知道怎麼在Markdown文件中建立一个区块引言，那会看起来像是你强迫断行，然后在每行的最前面加上&gt;：</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; This is a blockquote with two paragraphs. Lo<span class="comment">rem ipsum dolor sit amet,</span></span><br><span class="line">&gt; consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</span><br><span class="line">&gt; Vestibulum enim wisi, viverra nec, fringilla <span class="flow">in</span>, laoreet vitae, risus.</span><br><span class="line">或者只在段落第一行加上&gt;:</span><br></pre></td></tr></table></figure>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; This is a blockquote with two paragraphs. Lo<span class="comment">rem ipsum dolor sit amet,</span></span><br><span class="line"> consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</span><br><span class="line"> Vestibulum enim wisi, viverra nec, fringilla <span class="flow">in</span>, laoreet vitae, risus.</span><br></pre></td></tr></table></figure>
+<h2 id="u6E05_u5355"><a href="#u6E05_u5355" class="headerlink" title="清单"></a>清单</h2><h3 id="u6709_u5E8F_u6E05_u5355"><a href="#u6709_u5E8F_u6E05_u5355" class="headerlink" title="有序清单"></a>有序清单</h3><p>有序清单则使用<strong><code>数字</code></strong>接著一个<strong><code>英文句点</code></strong>，但是序号数字可以随意，只要是数字即可，例如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>  Bird</span><br><span class="line"><span class="number">2.</span>  McHale</span><br><span class="line"><span class="number">3.</span>  Parish</span><br></pre></td></tr></table></figure>
+<p>效果等同于：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3.</span> Bird</span><br><span class="line"><span class="number">1.</span> McHale</span><br><span class="line"><span class="number">8.</span> Parish</span><br></pre></td></tr></table></figure>
+<h3 id="u65E0_u5E8F_u6E05_u5355"><a href="#u65E0_u5E8F_u6E05_u5355" class="headerlink" title="无序清单"></a>无序清单</h3><p>使用<code>星号</code>、<code>加号</code>或是<code>减号</code>作为清单标记(为了书写方便一般使用减号)：</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">* </span>Red</span><br><span class="line"><span class="bullet">* </span>Green</span><br><span class="line"><span class="bullet">* </span>Blue</span><br></pre></td></tr></table></figure>
+<p>等同于：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">+ </span>Red</span><br><span class="line"><span class="bullet">+ </span>Green</span><br><span class="line"><span class="bullet">+ </span>Blue</span><br></pre></td></tr></table></figure>
+<p>也等同于：</p>
+<figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-<span class="ruby"> <span class="constant">Red</span></span><br><span class="line"></span>-<span class="ruby"> <span class="constant">Green</span></span><br><span class="line"></span>-<span class="ruby"> <span class="constant">Blue</span></span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注：两个不同列表之间不能相邻，否则会解释为嵌套的列表</p>
+</blockquote>
+<h2 id="u5D4C_u5957_u6E05_u5355"><a href="#u5D4C_u5957_u6E05_u5355" class="headerlink" title="嵌套清单"></a>嵌套清单</h2><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-<span class="ruby"> 外层列表项目</span><br><span class="line"></span> + 内层列表项目</span><br><span class="line"> + 内层无序列表项目</span><br><span class="line"> + 内层列表项目</span><br><span class="line">-<span class="ruby"> 外层列表项目</span></span><br></pre></td></tr></table></figure>
+<p>如果要在列表项目内放进引言，那 &gt; 就需要缩排：</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*   A <span class="type">list</span> <span class="property">item</span> <span class="keyword">with</span> a blockquote:</span><br><span class="line"></span><br><span class="line">    &gt; This <span class="keyword">is</span> a blockquote</span><br><span class="line">    &gt; inside a <span class="type">list</span> <span class="property">item</span>.</span><br></pre></td></tr></table></figure>
+<p>如果要放程序代码区块的话，该区块就需要缩排两次，也就是 8 个空白或是两个 tab：</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*   A list <span class="keyword">item </span>with a <span class="preprocessor">code</span> <span class="keyword">block:</span><br><span class="line"></span></span><br><span class="line">        &lt;<span class="preprocessor">code</span> goes here&gt;</span><br></pre></td></tr></table></figure>
+<p>当然，项目列表很可能会不小心产生，像是下面这样的写法：</p>
+<ol>
+<li>What a great season.</li>
+</ol>
+<p>换句话说，也就是在行首出现数字-句点-空白，要避免这样的状况，可以在句点前面加上反斜杠。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1986</span>\. What <span class="tag">a</span> great season.</span><br></pre></td></tr></table></figure>
+<h2 id="u6E90_u4EE3_u7801"><a href="#u6E90_u4EE3_u7801" class="headerlink" title="源代码"></a>源代码</h2><p>缩排<strong><code>4个空格</code></strong>或是<strong><code>1个Tab</code></strong>就可以</p>
+<h2 id="u6BB5_u5185_u6E90_u4EE3_u7801"><a href="#u6BB5_u5185_u6E90_u4EE3_u7801" class="headerlink" title="段内源代码"></a>段内源代码</h2><p>如果要标记一小段行内源代码，你可以用反引号把它包起来(`)，例如：</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Use</span> the `printf()` <span class="function"><span class="keyword">function</span>.</span></span><br></pre></td></tr></table></figure>
+<h2 id="u5206_u5272_u7EBF"><a href="#u5206_u5272_u7EBF" class="headerlink" title="分割线"></a>分割线</h2><p>在一行中用<strong><code>三个或以上的星号、减号、下划线</code></strong>来建立一个分隔线，行内不能有其他东西。你也可以在星号中间插入空白。下面每种写法都可以建立分隔线：</p>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span></span><br><span class="line">__________</span><br></pre></td></tr></table></figure>
+<h2 id="u5F3A_u8C03"><a href="#u5F3A_u8C03" class="headerlink" title="强调"></a>强调</h2><p>Markdown使用<strong><code>星号*和底线_</code></strong>作为标记强调字词的符号，被<strong><code>奇数个*或_包围</code></strong>的字词会被转成<em><code>斜体</code></em>，用<strong><code>两个*或_包围</code></strong>的话，则会被转成<strong><code>粗体</code></strong>，例如：</p>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">_single underscores_</span><br><span class="line"></span><br><span class="line"><span class="keyword">*</span><span class="keyword">*</span>double asterisks<span class="keyword">*</span><span class="keyword">*</span></span><br><span class="line"></span><br><span class="line">__double underscores__</span><br></pre></td></tr></table></figure>
+<h2 id="u8D85_u94FE_u63A5"><a href="#u8D85_u94FE_u63A5" class="headerlink" title="超链接"></a>超链接</h2><p>直接显示超链接</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;www<span class="class">.nstimer</span><span class="class">.cn</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>被链接的文字用<code>中括号[]</code>包起来，在方块括号后面马上接著<code>括号()</code>并插入网址连结即可，比如：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">This is [<span class="link_label">an example</span>](<span class="link_url">http://example.com/ "Title"</span>) inline link.</span><br><span class="line">[<span class="link_label">This link</span>](<span class="link_url">http://example.net/</span>) has no title attribute.</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">此外，还可以以索引方式把url都列在文章的最后，例如这样：</span><br><span class="line">[<span class="link_label">图灵社区</span>][<span class="link_reference">1</span>]</span><br><span class="line">![<span class="link_label">图灵社区Logo</span>][<span class="link_reference">2</span>] </span><br><span class="line">[<span class="link_reference">1</span>]:<span class="link_url">http://www.ituring.com.cn</span></span><br><span class="line">[<span class="link_reference">2</span>]:<span class="link_url">http://www.ituring.com.cn/Content/img/Turing.Gif</span></span><br></pre></td></tr></table></figure>
+<p>如果是要链接到同样主机的资源，可以使用相对路径：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">See my [<span class="link_label">About</span>](<span class="link_url">/about/</span>) page for details.</span><br></pre></td></tr></table></figure>
+<p>参考形式的链接使用另外一个方括号接在链接文字的括号后面，而在第二个方括号里面要填入用以辨识链接的标签：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">This is [<span class="link_label">an example</span>][<span class="link_reference">id</span>] reference-style link.</span><br></pre></td></tr></table></figure>
+<p>也可以选择性地在两个方括号中间加上空白：</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">This <span class="keyword">is</span> [an example] [<span class="property">id</span>] <span class="keyword">reference</span>-style link.</span><br></pre></td></tr></table></figure>
+<p>接着，在文档的任意处，可以把这个标签的链接内容定义出来：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="link_reference">id</span>]:<span class="link_url"> http://example.com/  "Optional Title Here"</span></span><br></pre></td></tr></table></figure>
+<p>链接定义的形式为：</p>
+<p>方括号，里面输入链接的辨识用标签<br>接着一个冒号<br>接着一个以上的空白或 tab<br>接着链接的网址<br>选择性地接着 title 内容，可以用单引号、双引号或是括号包着<br>下面这三种链接的定义都是相同：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[<span class="link_reference">foo</span>]:<span class="link_url"> http://example.com/  "Optional Title Here"</span></span><br><span class="line">[<span class="link_reference">foo</span>]:<span class="link_url"> http://example.com/  'Optional Title Here'</span></span><br><span class="line">[<span class="link_reference">foo</span>]:<span class="link_url"> http://example.com/  (Optional Title Here)</span></span><br></pre></td></tr></table></figure>
+<h2 id="u56FE_u7247"><a href="#u56FE_u7247" class="headerlink" title="图片"></a>图片</h2><p>与超链接类似，不过在前面多加一个感叹号：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="link_label">百度头条</span>](<span class="link_url">http://tieba.baidu.com/p/3137905063</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="u8F6C_u4E49_u5B57_u7B26"><a href="#u8F6C_u4E49_u5B57_u7B26" class="headerlink" title="转义字符"></a>转义字符</h2><p>用<code>\</code>将特殊字符如*, [, &gt; 变成普通字符</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">\`</span></span><br></pre></td></tr></table></figure>
+<h2 id="u5728_u7EBF_u7F16_u8F91_u5668"><a href="#u5728_u7EBF_u7F16_u8F91_u5668" class="headerlink" title="在线编辑器"></a>在线编辑器</h2><p><a href="https://www.zybuluo.com/mdeditor" target="_blank" rel="external">cmd editor</a></p>
+<blockquote>
+<p>Markdown语法翻译：<br><a href="http://www.ituring.com.cn/article/504" target="_blank" rel="external">http://www.ituring.com.cn/article/504</a>（简体中文）<br><a href="http://wowubuntu.com/markdown/" target="_blank" rel="external">http://wowubuntu.com/markdown/</a>(繁体中文)<br><a href="https://en.support.wordpress.com/markdown-quick-reference/" target="_blank" rel="external">https://en.support.wordpress.com/markdown-quick-reference/</a><br><a href="http://ibruce.info/2013/11/26/markdown/" target="_blank" rel="external">http://ibruce.info/2013/11/26/markdown/</a></p>
+</blockquote>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/12/29/Hexo扩展/" rel="next" title="Hexo扩展">
+                <i class="fa fa-chevron-left"></i> Hexo扩展
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/12/30/博客推荐/" rel="prev" title="博客推荐">
+                博客推荐 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2015/12/30/Markdown语法/"
+     data-title="Markdown语法"
+     data-content=""
+     data-url="http://nstimer.cn/2015/12/30/Markdown语法/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/12/30/Markdown语法/"
+           data-title="Markdown语法" data-url="http://nstimer.cn/2015/12/30/Markdown语法/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xpghl.com1.z0.glb.clouddn.com/头像.jpg"
+               alt="翟强" />
+          <p class="site-author-name" itemprop="name">翟强</p>
+          <p class="site-description motion-element" itemprop="description">人生如戏，全靠心细</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/rss2.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/zq4950411" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> github
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/qiangzhai88" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> twitter
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/1653357857/info" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> weibo
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/di-qiang" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> zhihu
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">Links</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://macshuo.com/" target="_blank">MacTalk</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u6BB5_u843D_u548C_u6362_u884C"><span class="nav-number">1.</span> <span class="nav-text">段落和换行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6807_u9898"><span class="nav-number">2.</span> <span class="nav-text">标题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5F15_u8A00"><span class="nav-number">3.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6E05_u5355"><span class="nav-number">4.</span> <span class="nav-text">清单</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u6709_u5E8F_u6E05_u5355"><span class="nav-number">4.1.</span> <span class="nav-text">有序清单</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u65E0_u5E8F_u6E05_u5355"><span class="nav-number">4.2.</span> <span class="nav-text">无序清单</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5D4C_u5957_u6E05_u5355"><span class="nav-number">5.</span> <span class="nav-text">嵌套清单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6E90_u4EE3_u7801"><span class="nav-number">6.</span> <span class="nav-text">源代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6BB5_u5185_u6E90_u4EE3_u7801"><span class="nav-number">7.</span> <span class="nav-text">段内源代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5206_u5272_u7EBF"><span class="nav-number">8.</span> <span class="nav-text">分割线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5F3A_u8C03"><span class="nav-number">9.</span> <span class="nav-text">强调</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u8D85_u94FE_u63A5"><span class="nav-number">10.</span> <span class="nav-text">超链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u56FE_u7247"><span class="nav-number">11.</span> <span class="nav-text">图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u8F6C_u4E49_u5B57_u7B26"><span class="nav-number">12.</span> <span class="nav-text">转义字符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5728_u7EBF_u7F16_u8F91_u5668"><span class="nav-number">13.</span> <span class="nav-text">在线编辑器</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">翟强</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.0"></script>
+
+
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"nstimer"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("5let3Mj1qgjrpd8tHpPhNUTm-gzGzoHsz", "A5ekHuMG2QPdw6vTwmhlLB3S");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+
+</body>
+</html>

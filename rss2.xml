@@ -7,8 +7,208 @@
     <link>http://nstimer.cn/</link>
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     <description><![CDATA[人生如戏，全靠心细]]></description>
-    <pubDate>Sun, 27 Dec 2015 13:13:00 GMT</pubDate>
+    <pubDate>Wed, 30 Dec 2015 07:02:56 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title><![CDATA[IJKMediaPlayer静态库制作]]></title>
+      <link>http://nstimer.cn/2015/12/30/IJKMediaPlayer%E9%9D%99%E6%80%81%E5%BA%93%E5%88%B6%E4%BD%9C/</link>
+      <guid>http://nstimer.cn/2015/12/30/IJKMediaPlayer%E9%9D%99%E6%80%81%E5%BA%93%E5%88%B6%E4%BD%9C/</guid>
+      <pubDate>Wed, 30 Dec 2015 07:02:18 GMT</pubDate>
+      <description>
+      <![CDATA[<h1 id="IJKMediaPlayer_u9759_u6001_u5E93_u5236_u4F5C"><a href="#IJKMediaPlayer_u9759_u6001_u5E93_u5236_u4F5C" class="headerlink" title="IJKM]]>
+      </description>
+      <content:encoded><![CDATA[<h1 id="IJKMediaPlayer_u9759_u6001_u5E93_u5236_u4F5C"><a href="#IJKMediaPlayer_u9759_u6001_u5E93_u5236_u4F5C" class="headerlink" title="IJKMediaPlayer静态库制作"></a>IJKMediaPlayer静态库制作</h1><h3 id="u6587_u4EF6_u5939_u64CD_u4F5C"><a href="#u6587_u4EF6_u5939_u64CD_u4F5C" class="headerlink" title="文件夹操作"></a>文件夹操作</h3><ol>
+<li><code>clone``IJKMediaPlayer</code>的<code>git</code>库,并编译成功</li>
+<li>将<code>./ios/IJKMediaPlayer</code>文件夹拷贝出备用</li>
+<li>将<code>./ios/build/universal</code>文件夹拷贝到<code>IJKMediaPlayer</code>文件夹下，并重命名<code>universal</code>为<code>ffmpeg</code></li>
+<li><p>将<code>./ios</code>同级目录<code>ijkmedia</code>文件夹拷贝到<code>IJKMediaPlayer</code>文件夹,在弹出的文件选项中点击<code>合并</code></p>
+<blockquote>
+<p>拷贝结束后将<code>ijkmedia</code>中的<code>android</code>文件夹和<code>Android.mk</code>文件删除</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="u5DE5_u7A0B_u8BBE_u7F6E"><a href="#u5DE5_u7A0B_u8BBE_u7F6E" class="headerlink" title="工程设置"></a>工程设置</h3><ol>
+<li>将项目中的<code>IJKFFMoviePlayerController</code>下的<code>ijkmedia</code>文件夹删除,并右键点击<code>addFile</code>文件夹<code>ijkmedia</code></li>
+<li>将项目中的<code>IJKFFMoviePlayerController</code>下的<code>ffmpeg</code>文件夹删除,并右键点击<code>addFile</code>文件夹<code>ffmpeg</code></li>
+<li>在<code>Build Settings</code>中的<code>header Search Paths</code>中添加<code>IJKMediaPlayer/ffmpeg/include</code></li>
+<li><a name="arc设置"></a>在<code>Build Phases</code>中的<code>Compile Source</code>中为以下文件添加 <code>-fno-objc-arc</code></li>
+</ol>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ijksdl_aout_ios_audiounit<span class="class">.m</span></span><br><span class="line">ijkplayer_ios<span class="class">.m</span></span><br><span class="line">ijksdl_vout_ios_gles2.m</span><br></pre></td></tr></table></figure>
+<h3 id="u9879_u76EE_u5F15_u7528"><a href="#u9879_u76EE_u5F15_u7528" class="headerlink" title="项目引用"></a><a name="项目引用"></a>项目引用</h3><ol>
+<li>将<code>IJKMediaPlayer</code>文件夹拷贝到与<code>.xcodeproj</code>的同级目录(非必须)</li>
+<li><p>在项目中的工程名称处右键选择<code>add Files to...</code>选择<code>IJKMediaPlayer.xcodeproj</code>,这样整个<code>IJKMediaPlayer</code>的文件夹都被添加进来了</p>
+<blockquote>
+<p>如果没有添加成功,则要将所有打开的<code>IJKMediaPlayer.xcodeproj</code>工程关闭后重试</p>
+</blockquote>
+</li>
+<li><p>设置项目依赖<br>在<code>User Header Search Paths</code>中输入<code>$(BUILT_PRODUCT_DIR)</code>,并选择<code>recursive</code></p>
+<blockquote>
+<p>如果<code>Archive</code>不通过的话就要加入<code>静态库的物理路径</code>,如<code>IJKMediaPlayer/IJKMediaPlayer</code>,并选择<code>recursive</code><a href="#arc设置">查看此处</a></p>
+</blockquote>
+</li>
+</ol>
+<h3 id="u5E38_u89C1_u9519_u8BEF"><a href="#u5E38_u89C1_u9519_u8BEF" class="headerlink" title="常见错误"></a>常见错误</h3><p>1.<code>Cast of Objective-C pointer type &#39;IJKSDLGLView *&#39; to C pointer type &#39;void *&#39; requires a bridged cast</code>错误</p>
+<p>在<code>Build Phases</code>中为<code>ijkplayer_ios.m</code>文件添加 <code>-fno-objc-arc</code></p>
+<ol>
+<li>如果发现有<code>.h</code>找不到的情况,则重新完成<a href="#项目引用">项目引用</a>`中的操作即可</li>
+</ol>
+<blockquote>
+<p>参考<br><a href="http://www.cnblogs.com/Quains/archive/2013/08/22/3276425.html" target="_blank" rel="external">http://www.cnblogs.com/Quains/archive/2013/08/22/3276425.html</a></p>
+</blockquote>
+]]></content:encoded>
+      <comments>http://nstimer.cn/2015/12/30/IJKMediaPlayer%E9%9D%99%E6%80%81%E5%BA%93%E5%88%B6%E4%BD%9C/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title><![CDATA[Block创建]]></title>
+      <link>http://nstimer.cn/2015/12/30/Block%E5%88%9B%E5%BB%BA/</link>
+      <guid>http://nstimer.cn/2015/12/30/Block%E5%88%9B%E5%BB%BA/</guid>
+      <pubDate>Wed, 30 Dec 2015 07:00:56 GMT</pubDate>
+      <description>
+      <![CDATA[<h1 id="OC_u4E2D_u5982_u4F55_u5B9A_u4E49_u4E00_u4E2ABlock_3F"><a href="#OC_u4E2D_u5982_u4F55_u5B9A_u4E49_u4E00_u4E2ABlock_3F" class="headerl]]>
+      </description>
+      <content:encoded><![CDATA[<h1 id="OC_u4E2D_u5982_u4F55_u5B9A_u4E49_u4E00_u4E2ABlock_3F"><a href="#OC_u4E2D_u5982_u4F55_u5B9A_u4E49_u4E00_u4E2ABlock_3F" class="headerlink" title="OC中如何定义一个Block?"></a>OC中如何定义一个Block?</h1><p>As a local variable:</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">returnType (^blockName)(parameterTypes) = ^returnType(parameters) &#123;...&#125;;</span><br></pre></td></tr></table></figure>
+<p>As a property:</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) returnType (^blockName)(parameterTypes);</span><br></pre></td></tr></table></figure>
+<p>As a method parameter:</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)someMethodThatTakesABlock:(returnType (^)(parameterTypes))blockName;</span><br></pre></td></tr></table></figure>
+<p>As an argument to a method call:</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[someObject someMethodThatTakesABlock:^returnType (parameters) &#123;...&#125;];</span><br></pre></td></tr></table></figure>
+<p>As a typedef:</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> returnType (^TypeName)(parameterTypes);</span><br><span class="line">TypeName blockName = ^returnType(parameters) &#123;...&#125;;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考:<br><a href="http://fuckingblocksyntax.com" target="_blank" rel="external">http://fuckingblocksyntax.com</a><br><a href="http://goshdarnblocksyntax.com" target="_blank" rel="external">http://goshdarnblocksyntax.com</a></p>
+</blockquote>
+]]></content:encoded>
+      <comments>http://nstimer.cn/2015/12/30/Block%E5%88%9B%E5%BB%BA/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title><![CDATA[博客推荐]]></title>
+      <link>http://nstimer.cn/2015/12/30/%E5%8D%9A%E5%AE%A2%E6%8E%A8%E8%8D%90/</link>
+      <guid>http://nstimer.cn/2015/12/30/%E5%8D%9A%E5%AE%A2%E6%8E%A8%E8%8D%90/</guid>
+      <pubDate>Wed, 30 Dec 2015 06:58:29 GMT</pubDate>
+      <description>
+      <![CDATA[<h2 id="u7EFC_u5408_u7C7B"><a href="#u7EFC_u5408_u7C7B" class="headerlink" title="综合类"></a>综合类</h2><p><a href="http://zengrong.net" target="]]>
+      </description>
+      <content:encoded><![CDATA[<h2 id="u7EFC_u5408_u7C7B"><a href="#u7EFC_u5408_u7C7B" class="headerlink" title="综合类"></a>综合类</h2><p><a href="http://zengrong.net" target="_blank" rel="external">zrong’s blog</a><br><a href="http://deerchao.net/" target="_blank" rel="external">钊哥博客</a></p>
+<p><a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="external">justjavac/free-programming-books-zh_CN</a><br><a href="https://github.com/nemoTyrant/manong" target="_blank" rel="external">nemoTyrant/manong</a><br><a href="http://wsgzao.github.io" target="_blank" rel="external">HelloDog</a><br><a href="http://www.jubushoushen.com" target="_blank" rel="external">菊部受审</a><br><a href="http://blog.saymagic.cn" target="_blank" rel="external">saymagic</a><br><a href="http://www.itoldme.net" target="_blank" rel="external">墙外的梯子</a><br><a href="http://lutaf.com" target="_blank" rel="external">鲁塔弗的博客</a><br><a href="http://laod.cn" target="_blank" rel="external">老D博客</a><br><a href="http://xote.tk" target="_blank" rel="external">乱码周刊</a><br><a href="http://colobu.com" target="_blank" rel="external">鸟窝</a><br><a href="http://ppting.me" target="_blank" rel="external">PPTing</a><br><a href="http://zipperary.com" target="_blank" rel="external">zipperary</a><br><a href="http://lukang.me" target="_blank" rel="external">lukang</a><br><a href="http://www.ixirong.com" target="_blank" rel="external">ixirong</a><br><a href="www.swiftcafe.io">swiftcafe</a></p>
+<h2 id="u670D_u52A1_u5668"><a href="#u670D_u52A1_u5668" class="headerlink" title="服务器"></a>服务器</h2><p><a href="http://blog.bbzhh.com" target="_blank" rel="external">Tan9le的博客</a><br><a href="http://www.laozuo.org/" target="_blank" rel="external">老左博客</a><br><a href="http://lnmp.org/" target="_blank" rel="external">LNMP一键安装包</a><br><a href="http://www.itbulu.com/" target="_blank" rel="external">老蒋部落</a><br><a href="http://www.dabu.info/" target="_blank" rel="external">大步’s Blog</a><br><a href="http://blog.maryopen.com/" target="_blank" rel="external">三十 | 马力全开</a><br><a href="https://quericy.me/blog" target="_blank" rel="external">quericy Eden</a><br><a href="http://www.danbaise.com/" target="_blank" rel="external">淡白色</a><br><a href="http://www.tennfy.com" target="_blank" rel="external">TENNFY WU</a><br><a href="http://www.ihunter.me/" target="_blank" rel="external">Hunter的时光机器</a><br><a href="http://blog.maryopen.com" target="_blank" rel="external">maryopen</a><br><a href="http://blog.ssccsu.com" target="_blank" rel="external">SSCCSU</a><br><a href="https://blog.phpgao.com" target="_blank" rel="external">老高的技术博客</a><br><a href="http://xiaorui.cc" target="_blank" rel="external">小rui</a></p>
+<h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><p><a href="http://dockone.io" target="_blank" rel="external">dockone</a></p>
+<h2 id="VPS"><a href="#VPS" class="headerlink" title="VPS"></a>VPS</h2><p><a href="http://www.vpser.net" target="_blank" rel="external">VPS侦探</a><br><a href="http://www.bandwagong.com" target="_blank" rel="external">搬瓦工VPS</a><br><a href="http://banwagong.cn/" target="_blank" rel="external">搬瓦工VPS中文网</a><br><a href="http://www.angely.org" target="_blank" rel="external">优惠码每天一帖</a><br><a href="http://www.youhuima.cc/" target="_blank" rel="external">优惠码.嚓嚓</a><br><a href="http://xianhuo.org" target="_blank" rel="external">鲜活优惠码</a><br><a href="http://www.7vps.net/" target="_blank" rel="external">VPS推荐网</a><br><a href="https://vultrcoupons.com/" target="_blank" rel="external">VULTR Coupon Code</a></p>
+<h2 id="VPS_u63A8_u8350"><a href="#VPS_u63A8_u8350" class="headerlink" title="VPS推荐"></a>VPS推荐</h2><p><a href="https://bandwagonhost.com/index.php" target="_blank" rel="external">Bandwagon Host</a><br><a href="https://www.digitalocean.com" target="_blank" rel="external">DigitalOcean</a><br><a href="https://www.linode.com/" target="_blank" rel="external">Linode</a><br><a href="https://www.vultr.com/freetrial/" target="_blank" rel="external">Vultr.com</a><br><a href="https://hostus.us/" target="_blank" rel="external">HostUS</a></p>
+<p><a href="https://www.openshift.com/" target="_blank" rel="external">OpenShift</a><br><a href="https://hub.docker.com/" target="_blank" rel="external">Docker</a></p>
+<h2 id="u9999_u6E2FVPS"><a href="#u9999_u6E2FVPS" class="headerlink" title="香港VPS"></a>香港VPS</h2><p><a href="http://www.hostus.cn" target="_blank" rel="external">Hostus</a></p>
+<h2 id="u56FD_u5185VPS"><a href="#u56FD_u5185VPS" class="headerlink" title="国内VPS"></a>国内VPS</h2><p><a href="http://www.alauda.cn" target="_blank" rel="external">灵雀云</a><br><a href="https://www.tenxcloud.com" target="_blank" rel="external">时速云</a><br><a href="http://www.daocloud.io" target="_blank" rel="external">DaoCloud</a><br><a href="https://www.goodrain.com" target="_blank" rel="external">好雨云</a><br><a href="http://csphere.cn/docs/" target="_blank" rel="external">希云</a><br><a href="https://www.shurenyun.com" target="_blank" rel="external">数人云</a><br><a href="https://www.tutum.co" target="_blank" rel="external">tutum</a><br><a href="https://aws.amazon.com/cn/free/?sc_ichannel=ha&amp;sc_icountry=cn&amp;sc_icampaign=ha_cn_FreeTier&amp;sc_icontent=ha_112&amp;sc_idetail=ha_cn_112_1&amp;sc_iplace=ha_cn_hero_cta&amp;sc_isegment=2&amp;" target="_blank" rel="external">amazon免费1年</a></p>
+<h2 id="u4EE3_u7801_u5B66_u4E60"><a href="#u4EE3_u7801_u5B66_u4E60" class="headerlink" title="代码学习"></a>代码学习</h2><h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><p><a href="http://www.ideajava.org/" target="_blank" rel="external">DEA开源社区</a><br><a href="http://www.liaoxuefeng.com/" target="_blank" rel="external">廖雪峰的官方网站</a></p>
+<p><a href="http://deerchao.net/" target="_blank" rel="external">正则表达式&amp;HTML</a><br><a href="http://www.w3school.com.cn/index.html" target="_blank" rel="external">w3school 在线教程</a><br><a href="https://www.codecademy.com/" target="_blank" rel="external">codecademy</a></p>
+<h3 id="Shell_Linux_Mysql_C_C++"><a href="#Shell_Linux_Mysql_C_C++" class="headerlink" title="Shell Linux Mysql C C++"></a>Shell Linux Mysql C C++</h3><p><a href="http://c.biancheng.net/cpp/view/6998.html" target="_blank" rel="external">C语言中文网</a></p>
+<h3 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h3><p><a href="https://gitcafe.com/riku/Markdown-Syntax-CN/blob/master/syntax.md#autoescape" target="_blank" rel="external">Markdown-Syntax-CN</a></p>
+<h3 id="IOS"><a href="#IOS" class="headerlink" title="IOS"></a>IOS</h3><p><a href="https://www.bignerdranch.com" target="_blank" rel="external">Big Nerd Ranch</a><br><a href="http://rypress.com/tutorials/objective-c/index" target="_blank" rel="external">RyPress</a><br><a href="http://www.appcoda.com" target="_blank" rel="external">AppCoda</a><br><a href="http://www.raywenderlich.com" target="_blank" rel="external">raywenderlish</a><br><a href="http://www.nsscreencast.com/episodes" target="_blank" rel="external">NSScreencast</a><br><a href="http://cocoadevcentral.com" target="_blank" rel="external">Cocoa Dev Central</a><br><a href="http://nshipster.com" target="_blank" rel="external">NSHipster</a><br><a href="http://www.codingexplorer.com" target="_blank" rel="external">Coding Explorer</a><br><a href="">iOS Dev Weekly</a><br><a href="http://www.cimgf.com" target="_blank" rel="external">Cocoa Is My Girlfriend</a><br><a href="https://thinkster.io/a-better-way-to-learn-swift" target="_blank" rel="external">A Better Way to Learn Swift</a><br><a href="https://iosdevweekly.com" target="_blank" rel="external">iCode blog</a><br><a href="https://maniacdev.com" target="_blank" rel="external">ManiacDev</a><br><a href="http://www.tutorialspoint.com/ios/index.htm" target="_blank" rel="external">Tutorials Point</a><br><a href="http://natashatherobot.com" target="_blank" rel="external">Natasha The Robot</a><br><a href="http://code.tutsplus.com/series/learn-ios-sdk-development-from-scratch--mobile-14536" target="_blank" rel="external">Tuts+</a><br><a href="www.nscookbook.com">NSCookbook</a><br><a href="http://ios-blog.co.uk" target="_blank" rel="external">iOS-Blog</a></p>
+<p><a href="https://github.com/trending?l=objective-c&amp;since=monthly" target="_blank" rel="external">Trending Objective-C repositories on GitHub</a><br><a href="https://www.objc.io" target="_blank" rel="external">objc</a><br><a href="http://www.cnblogs.com/kenshincui/p/3983982.html#NSOperation" target="_blank" rel="external">KenshinCui - 博客园</a><br><a href="http://www.minroad.com" target="_blank" rel="external">IOS开发技术博客</a><br><a href="http://siroccoicode.club" target="_blank" rel="external">Java君</a><br><a href="http://www.olinone.com" target="_blank" rel="external">庞海礁的个人空间</a><br><a href="http://southpeak.github.io/blog/categories/ios/" target="_blank" rel="external">南峰子的技术博客</a>(百度)<br><a href="http://blog.cnbluebox.com/blog/archives/" target="_blank" rel="external">刘坤的技术博客</a>(阿里)<br><a href="http://casatwy.com" target="_blank" rel="external">Casa</a><br><a href="http://nshipster.cn" target="_blank" rel="external">nshipster中文</a></p>
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><p><a href="http://git-scm.com/book/zh/v2" target="_blank" rel="external">Git</a></p>
+<h2 id="u5176_u4ED6"><a href="#u5176_u4ED6" class="headerlink" title="其他"></a>其他</h2><p><a href="http://www.fulidang.com/" target="_blank" rel="external">福利档</a><br><a href="https://bitbucket.org" target="_blank" rel="external">bitbucket</a></p>
+<h2 id="u535A_u5BA2_u5EFA_u7AD9"><a href="#u535A_u5BA2_u5EFA_u7AD9" class="headerlink" title="博客建站"></a>博客建站</h2><p><a href="https://hexo.io" target="_blank" rel="external">hexo</a><br><a href="http://jekyllrb.com" target="_blank" rel="external">Jekyllrb</a><br><a href="http://octopress.org/docs/configuring/" target="_blank" rel="external">octopress</a></p>
+<h2 id="u6BCF_u65E5_u5FC5_u8BFB"><a href="#u6BCF_u65E5_u5FC5_u8BFB" class="headerlink" title="每日必读"></a>每日必读</h2><p><a href="http://toutiao.io" target="_blank" rel="external">开发者头条</a><br><a href="http://www.jianshu.com" target="_blank" rel="external">简书</a><br><a href="https://medium.com" target="_blank" rel="external">Medium</a><br><a href="http://briteming.blogspot.jp/search/label/iOS" target="_blank" rel="external">fisherman’bolg</a><br><a href="http://geek.csdn.net/?ref=toolbar_logo" target="_blank" rel="external">极客头条</a><br><a href="http://codecloud.net" target="_blank" rel="external">CodeCloud</a></p>
+<h2 id="mac_u4F7F_u7528"><a href="#mac_u4F7F_u7528" class="headerlink" title="mac使用"></a>mac使用</h2><p><a href="http://book.zhouyang.me/content/index.html" target="_blank" rel="external">Oh My Mac Book</a></p>
+<h2 id="u4EE3_u7801_u5B66_u4E60-1"><a href="#u4EE3_u7801_u5B66_u4E60-1" class="headerlink" title="代码学习"></a>代码学习</h2><p><a href="https://teamtreehouse.com/subscribe/plans?trial=yes" target="_blank" rel="external">treehouse</a></p>
+]]></content:encoded>
+      <comments>http://nstimer.cn/2015/12/30/%E5%8D%9A%E5%AE%A2%E6%8E%A8%E8%8D%90/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title><![CDATA[Markdown语法]]></title>
+      <link>http://nstimer.cn/2015/12/30/Markdown%E8%AF%AD%E6%B3%95/</link>
+      <guid>http://nstimer.cn/2015/12/30/Markdown%E8%AF%AD%E6%B3%95/</guid>
+      <pubDate>Wed, 30 Dec 2015 06:56:07 GMT</pubDate>
+      <description>
+      <![CDATA[<h2 id="u6BB5_u843D_u548C_u6362_u884C"><a href="#u6BB5_u843D_u548C_u6362_u884C" class="headerlink" title="段落和换行"></a>段落和换行</h2><p>和LATEX一样，用]]>
+      </description>
+      <content:encoded><![CDATA[<h2 id="u6BB5_u843D_u548C_u6362_u884C"><a href="#u6BB5_u843D_u548C_u6362_u884C" class="headerlink" title="段落和换行"></a>段落和换行</h2><p>和LATEX一样，用一个以上的空行代表分段，而没有空行的换行被忽略，所以允许段内强制换行<br>单个回车，视为空格；连续回车，才能分段。回车前在行尾加两个空格，即可段内换行。</p>
+<p>Q:在 Markdown 文档里如何打出空行？<br>A:直接使用 html 标签，即 <code>&lt;br /&gt;</code><br>Q:使文本保持原样输出<br>A:在开头输入两个以上空格</p>
+<h2 id="u6807_u9898"><a href="#u6807_u9898" class="headerlink" title="标题"></a>标题</h2><p>Markdown支援两种标题的语法，类 Setext 和类 atx 形式。</p>
+<p>类Setext形式是用底线的形式，利用<code>=</code>（最高阶标题）和<code>-</code>（第二阶标题），例如：</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="header">This is an H1</span><br><span class="line">=============</span></span><br><span class="line"></span><br><span class="line"><span class="header">This is an H2</span><br><span class="line">-------------</span></span><br></pre></td></tr></table></figure>
+<p>任何数量的 <code>=</code> 和 <code>-</code> 都可以有效果。</p>
+<p>Atx形式则是在行首插入1至6个<code>#</code>，对应到标题1到6阶，例如:</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This is an H1</span></span><br><span class="line"><span class="comment">## This is an H2</span></span><br><span class="line"><span class="comment">###### This is an H6</span></span><br></pre></td></tr></table></figure>
+<h2 id="u5F15_u8A00"><a href="#u5F15_u8A00" class="headerlink" title="引言"></a>引言</h2><p>Markdown使用email形式的区块引言，如果你很熟悉如何在email信件中引言，你就知道怎麼在Markdown文件中建立一个区块引言，那会看起来像是你强迫断行，然后在每行的最前面加上&gt;：</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; This is a blockquote with two paragraphs. Lo<span class="comment">rem ipsum dolor sit amet,</span></span><br><span class="line">&gt; consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</span><br><span class="line">&gt; Vestibulum enim wisi, viverra nec, fringilla <span class="flow">in</span>, laoreet vitae, risus.</span><br><span class="line">或者只在段落第一行加上&gt;:</span><br></pre></td></tr></table></figure>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; This is a blockquote with two paragraphs. Lo<span class="comment">rem ipsum dolor sit amet,</span></span><br><span class="line"> consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</span><br><span class="line"> Vestibulum enim wisi, viverra nec, fringilla <span class="flow">in</span>, laoreet vitae, risus.</span><br></pre></td></tr></table></figure>
+<h2 id="u6E05_u5355"><a href="#u6E05_u5355" class="headerlink" title="清单"></a>清单</h2><h3 id="u6709_u5E8F_u6E05_u5355"><a href="#u6709_u5E8F_u6E05_u5355" class="headerlink" title="有序清单"></a>有序清单</h3><p>有序清单则使用<strong><code>数字</code></strong>接著一个<strong><code>英文句点</code></strong>，但是序号数字可以随意，只要是数字即可，例如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>  Bird</span><br><span class="line"><span class="number">2.</span>  McHale</span><br><span class="line"><span class="number">3.</span>  Parish</span><br></pre></td></tr></table></figure>
+<p>效果等同于：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3.</span> Bird</span><br><span class="line"><span class="number">1.</span> McHale</span><br><span class="line"><span class="number">8.</span> Parish</span><br></pre></td></tr></table></figure>
+<h3 id="u65E0_u5E8F_u6E05_u5355"><a href="#u65E0_u5E8F_u6E05_u5355" class="headerlink" title="无序清单"></a>无序清单</h3><p>使用<code>星号</code>、<code>加号</code>或是<code>减号</code>作为清单标记(为了书写方便一般使用减号)：</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">* </span>Red</span><br><span class="line"><span class="bullet">* </span>Green</span><br><span class="line"><span class="bullet">* </span>Blue</span><br></pre></td></tr></table></figure>
+<p>等同于：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">+ </span>Red</span><br><span class="line"><span class="bullet">+ </span>Green</span><br><span class="line"><span class="bullet">+ </span>Blue</span><br></pre></td></tr></table></figure>
+<p>也等同于：</p>
+<figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-<span class="ruby"> <span class="constant">Red</span></span><br><span class="line"></span>-<span class="ruby"> <span class="constant">Green</span></span><br><span class="line"></span>-<span class="ruby"> <span class="constant">Blue</span></span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注：两个不同列表之间不能相邻，否则会解释为嵌套的列表</p>
+</blockquote>
+<h2 id="u5D4C_u5957_u6E05_u5355"><a href="#u5D4C_u5957_u6E05_u5355" class="headerlink" title="嵌套清单"></a>嵌套清单</h2><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-<span class="ruby"> 外层列表项目</span><br><span class="line"></span> + 内层列表项目</span><br><span class="line"> + 内层无序列表项目</span><br><span class="line"> + 内层列表项目</span><br><span class="line">-<span class="ruby"> 外层列表项目</span></span><br></pre></td></tr></table></figure>
+<p>如果要在列表项目内放进引言，那 &gt; 就需要缩排：</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*   A <span class="type">list</span> <span class="property">item</span> <span class="keyword">with</span> a blockquote:</span><br><span class="line"></span><br><span class="line">    &gt; This <span class="keyword">is</span> a blockquote</span><br><span class="line">    &gt; inside a <span class="type">list</span> <span class="property">item</span>.</span><br></pre></td></tr></table></figure>
+<p>如果要放程序代码区块的话，该区块就需要缩排两次，也就是 8 个空白或是两个 tab：</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*   A list <span class="keyword">item </span>with a <span class="preprocessor">code</span> <span class="keyword">block:</span><br><span class="line"></span></span><br><span class="line">        &lt;<span class="preprocessor">code</span> goes here&gt;</span><br></pre></td></tr></table></figure>
+<p>当然，项目列表很可能会不小心产生，像是下面这样的写法：</p>
+<ol>
+<li>What a great season.</li>
+</ol>
+<p>换句话说，也就是在行首出现数字-句点-空白，要避免这样的状况，可以在句点前面加上反斜杠。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1986</span>\. What <span class="tag">a</span> great season.</span><br></pre></td></tr></table></figure>
+<h2 id="u6E90_u4EE3_u7801"><a href="#u6E90_u4EE3_u7801" class="headerlink" title="源代码"></a>源代码</h2><p>缩排<strong><code>4个空格</code></strong>或是<strong><code>1个Tab</code></strong>就可以</p>
+<h2 id="u6BB5_u5185_u6E90_u4EE3_u7801"><a href="#u6BB5_u5185_u6E90_u4EE3_u7801" class="headerlink" title="段内源代码"></a>段内源代码</h2><p>如果要标记一小段行内源代码，你可以用反引号把它包起来(`)，例如：</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Use</span> the `printf()` <span class="function"><span class="keyword">function</span>.</span></span><br></pre></td></tr></table></figure>
+<h2 id="u5206_u5272_u7EBF"><a href="#u5206_u5272_u7EBF" class="headerlink" title="分割线"></a>分割线</h2><p>在一行中用<strong><code>三个或以上的星号、减号、下划线</code></strong>来建立一个分隔线，行内不能有其他东西。你也可以在星号中间插入空白。下面每种写法都可以建立分隔线：</p>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span></span><br><span class="line">__________</span><br></pre></td></tr></table></figure>
+<h2 id="u5F3A_u8C03"><a href="#u5F3A_u8C03" class="headerlink" title="强调"></a>强调</h2><p>Markdown使用<strong><code>星号*和底线_</code></strong>作为标记强调字词的符号，被<strong><code>奇数个*或_包围</code></strong>的字词会被转成<em><code>斜体</code></em>，用<strong><code>两个*或_包围</code></strong>的话，则会被转成<strong><code>粗体</code></strong>，例如：</p>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">_single underscores_</span><br><span class="line"></span><br><span class="line"><span class="keyword">*</span><span class="keyword">*</span>double asterisks<span class="keyword">*</span><span class="keyword">*</span></span><br><span class="line"></span><br><span class="line">__double underscores__</span><br></pre></td></tr></table></figure>
+<h2 id="u8D85_u94FE_u63A5"><a href="#u8D85_u94FE_u63A5" class="headerlink" title="超链接"></a>超链接</h2><p>直接显示超链接</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;www<span class="class">.nstimer</span><span class="class">.cn</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>被链接的文字用<code>中括号[]</code>包起来，在方块括号后面马上接著<code>括号()</code>并插入网址连结即可，比如：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">This is [<span class="link_label">an example</span>](<span class="link_url">http://example.com/ "Title"</span>) inline link.</span><br><span class="line">[<span class="link_label">This link</span>](<span class="link_url">http://example.net/</span>) has no title attribute.</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">此外，还可以以索引方式把url都列在文章的最后，例如这样：</span><br><span class="line">[<span class="link_label">图灵社区</span>][<span class="link_reference">1</span>]</span><br><span class="line">![<span class="link_label">图灵社区Logo</span>][<span class="link_reference">2</span>] </span><br><span class="line">[<span class="link_reference">1</span>]:<span class="link_url">http://www.ituring.com.cn</span></span><br><span class="line">[<span class="link_reference">2</span>]:<span class="link_url">http://www.ituring.com.cn/Content/img/Turing.Gif</span></span><br></pre></td></tr></table></figure>
+<p>如果是要链接到同样主机的资源，可以使用相对路径：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">See my [<span class="link_label">About</span>](<span class="link_url">/about/</span>) page for details.</span><br></pre></td></tr></table></figure>
+<p>参考形式的链接使用另外一个方括号接在链接文字的括号后面，而在第二个方括号里面要填入用以辨识链接的标签：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">This is [<span class="link_label">an example</span>][<span class="link_reference">id</span>] reference-style link.</span><br></pre></td></tr></table></figure>
+<p>也可以选择性地在两个方括号中间加上空白：</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">This <span class="keyword">is</span> [an example] [<span class="property">id</span>] <span class="keyword">reference</span>-style link.</span><br></pre></td></tr></table></figure>
+<p>接着，在文档的任意处，可以把这个标签的链接内容定义出来：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="link_reference">id</span>]:<span class="link_url"> http://example.com/  "Optional Title Here"</span></span><br></pre></td></tr></table></figure>
+<p>链接定义的形式为：</p>
+<p>方括号，里面输入链接的辨识用标签<br>接着一个冒号<br>接着一个以上的空白或 tab<br>接着链接的网址<br>选择性地接着 title 内容，可以用单引号、双引号或是括号包着<br>下面这三种链接的定义都是相同：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[<span class="link_reference">foo</span>]:<span class="link_url"> http://example.com/  "Optional Title Here"</span></span><br><span class="line">[<span class="link_reference">foo</span>]:<span class="link_url"> http://example.com/  'Optional Title Here'</span></span><br><span class="line">[<span class="link_reference">foo</span>]:<span class="link_url"> http://example.com/  (Optional Title Here)</span></span><br></pre></td></tr></table></figure>
+<h2 id="u56FE_u7247"><a href="#u56FE_u7247" class="headerlink" title="图片"></a>图片</h2><p>与超链接类似，不过在前面多加一个感叹号：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="link_label">百度头条</span>](<span class="link_url">http://tieba.baidu.com/p/3137905063</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="u8F6C_u4E49_u5B57_u7B26"><a href="#u8F6C_u4E49_u5B57_u7B26" class="headerlink" title="转义字符"></a>转义字符</h2><p>用<code>\</code>将特殊字符如*, [, &gt; 变成普通字符</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">\`</span></span><br></pre></td></tr></table></figure>
+<h2 id="u5728_u7EBF_u7F16_u8F91_u5668"><a href="#u5728_u7EBF_u7F16_u8F91_u5668" class="headerlink" title="在线编辑器"></a>在线编辑器</h2><p><a href="https://www.zybuluo.com/mdeditor" target="_blank" rel="external">cmd editor</a></p>
+<blockquote>
+<p>Markdown语法翻译：<br><a href="http://www.ituring.com.cn/article/504" target="_blank" rel="external">http://www.ituring.com.cn/article/504</a>（简体中文）<br><a href="http://wowubuntu.com/markdown/" target="_blank" rel="external">http://wowubuntu.com/markdown/</a>(繁体中文)<br><a href="https://en.support.wordpress.com/markdown-quick-reference/" target="_blank" rel="external">https://en.support.wordpress.com/markdown-quick-reference/</a><br><a href="http://ibruce.info/2013/11/26/markdown/" target="_blank" rel="external">http://ibruce.info/2013/11/26/markdown/</a></p>
+</blockquote>
+]]></content:encoded>
+      <comments>http://nstimer.cn/2015/12/30/Markdown%E8%AF%AD%E6%B3%95/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title><![CDATA[Hexo扩展]]></title>
+      <link>http://nstimer.cn/2015/12/29/Hexo%E6%89%A9%E5%B1%95/</link>
+      <guid>http://nstimer.cn/2015/12/29/Hexo%E6%89%A9%E5%B1%95/</guid>
+      <pubDate>Tue, 29 Dec 2015 08:52:00 GMT</pubDate>
+      <description>
+      <![CDATA[<h2 id="u6253_u8D4F"><a href="#u6253_u8D4F" class="headerlink" title="打赏"></a>打赏</h2><p><a href="http://www.dashangcloud.com" target="_blank]]>
+      </description>
+      <content:encoded><![CDATA[<h2 id="u6253_u8D4F"><a href="#u6253_u8D4F" class="headerlink" title="打赏"></a>打赏</h2><p><a href="http://www.dashangcloud.com" target="_blank" rel="external">云打赏</a></p>
+<h2 id="u7545_u8A00"><a href="#u7545_u8A00" class="headerlink" title="畅言"></a>畅言</h2><p><a href="http://changyan.kuaizhan.com" target="_blank" rel="external">畅言</a></p>
+<h2 id="u5FAE_u535A_u5899"><a href="#u5FAE_u535A_u5899" class="headerlink" title="微博墙"></a>微博墙</h2><h2 id="u5FAE_u4FE1_u516C_u4F17_u53F7_u5899"><a href="#u5FAE_u4FE1_u516C_u4F17_u53F7_u5899" class="headerlink" title="微信公众号墙"></a>微信公众号墙</h2><h2 id="u90AE_u4EF6_u8BA2_u9605"><a href="#u90AE_u4EF6_u8BA2_u9605" class="headerlink" title="邮件订阅"></a>邮件订阅</h2>]]></content:encoded>
+      <comments>http://nstimer.cn/2015/12/29/Hexo%E6%89%A9%E5%B1%95/#disqus_thread</comments>
+    </item>
     
     <item>
       <title><![CDATA[Hexo学习]]></title>
@@ -218,8 +418,15 @@
 <figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% blockquote <span class="comment">[author<span class="comment">[, source]</span>]</span> <span class="comment">[link]</span> <span class="comment">[source_link_title]</span> %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="u4EE3_u7801_u5757"><a href="#u4EE3_u7801_u5757" class="headerlink" title="代码块"></a>代码块</h3><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% codeblock <span class="string">[title]</span> <span class="string">[lang:language]</span> <span class="string">[url]</span> <span class="string">[link text]</span> %&#125;</span><br><span class="line">code snippet</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br></pre></td></tr></table></figure>
 <p>不知道怎么使用？可以<a href="/posts-sub/Hexo学习/Hexo标签插件.html">查看此处</a></p>
-<h3 id="iframe"><a href="#iframe" class="headerlink" title="iframe"></a>iframe</h3><p>在文章中插入iframe<br><figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="collection">&#123;% iframe url <span class="collection">[width]</span> <span class="collection">[height]</span> %&#125;</span></span><br></pre></td></tr></table></figure></p>
-<iframe src="http://7xpghl.com1.z0.glb.clouddn.com/头像.jpg" width="100" height="100" frameborder="0" allowfullscreen></iframe>
+<h3 id="iframe"><a href="#iframe" class="headerlink" title="iframe"></a>iframe</h3><p>在文章中插入iframe</p>
+<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="collection">&#123;% iframe url <span class="collection">[width]</span> <span class="collection">[height]</span> %&#125;</span></span><br></pre></td></tr></table></figure>
+<iframe src="http://player.youku.com/embed/XMjI2MjU3MDMy" width="500" height="500" frameborder="0" allowfullscreen></iframe>
+<iframe height="498" width="510" src="http://player.youku.com/embed/XMjI2MjU3MDMy" frameborder="0" allowfullscreen></iframe>
+
+<h3 id="u63D2_u5165_u97F3_u4E50"><a href="#u63D2_u5165_u97F3_u4E50" class="headerlink" title="插入音乐"></a>插入音乐</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">embed</span> <span class="attribute">src</span>=<span class="value">"http://www.xiami.com/widget/0_3515679/singlePlayer.swf"</span> <span class="attribute">type</span>=<span class="value">"application/x-shockwave-flash"</span> <span class="attribute">width</span>=<span class="value">"257"</span> <span class="attribute">height</span>=<span class="value">"33"</span> <span class="attribute">wmode</span>=<span class="value">"transparent"</span>&gt;</span><span class="tag">&lt;/<span class="title">embed</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<embed src="http://www.xiami.com/widget/0_3515679/singlePlayer.swf" type="application/x-shockwave-flash" width="257" height="33" wmode="transparent">
+
+
 <h3 id="image"><a href="#image" class="headerlink" title="image"></a>image</h3><p>在文章中插入指定大小的图片<br><figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="collection">&#123;% img <span class="collection">[class names]</span> /path/to/image <span class="collection">[width]</span> <span class="collection">[height]</span> <span class="collection">[title text <span class="collection">[alt text]</span>]</span> %&#125;</span></span><br></pre></td></tr></table></figure></p>
 <img src="/path/to/image" class="[class names]" width="100" height="100" title="title">
 <h3 id="u94FE_u63A5"><a href="#u94FE_u63A5" class="headerlink" title="链接"></a>链接</h3><p>在文章中插入链接，并自动给外部链接添加 <code>target=&quot;_blank&quot;</code> 属性。<br><figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="collection">&#123;% link text url <span class="collection">[external]</span> <span class="collection">[title]</span> %&#125;</span></span><br></pre></td></tr></table></figure></p>
