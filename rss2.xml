@@ -7,8 +7,72 @@
     <link>http://nstimer.cn/</link>
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     <description><![CDATA[人生如戏，全靠心细]]></description>
-    <pubDate>Wed, 30 Dec 2015 07:02:56 GMT</pubDate>
+    <pubDate>Tue, 12 Jan 2016 04:58:21 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title><![CDATA[云主机]]></title>
+      <link>http://nstimer.cn/2016/01/12/%E4%BA%91%E4%B8%BB%E6%9C%BA/</link>
+      <guid>http://nstimer.cn/2016/01/12/%E4%BA%91%E4%B8%BB%E6%9C%BA/</guid>
+      <pubDate>Tue, 12 Jan 2016 02:16:28 GMT</pubDate>
+      <description>
+      <![CDATA[<h2 id="u9752_u4E91"><a href="#u9752_u4E91" class="headerlink" title="青云"></a>青云</h2><p>官网：<a href="https://www.qingcloud.com" target="_blan]]>
+      </description>
+      <content:encoded><![CDATA[<h2 id="u9752_u4E91"><a href="#u9752_u4E91" class="headerlink" title="青云"></a>青云</h2><p>官网：<a href="https://www.qingcloud.com" target="_blank" rel="external">https://www.qingcloud.com</a><br>具体使用：</p>
+<h2 id="u4E9A_u9A6C_u900A_EC2"><a href="#u4E9A_u9A6C_u900A_EC2" class="headerlink" title="亚马逊 EC2"></a>亚马逊 EC2</h2><p>官网： <a href="http://aws.amazon.com/cn/free/" target="_blank" rel="external">http://aws.amazon.com/cn/free/</a></p>
+<h2 id="u4ECA_u76EE_u6807"><a href="#u4ECA_u76EE_u6807" class="headerlink" title="今目标"></a>今目标</h2><p>官网：<a href="http://www.jingoal.com/index.html" target="_blank" rel="external">http://www.jingoal.com/index.html</a></p>
+<h2 id="u8C37_u6B4C_u4E91"><a href="#u8C37_u6B4C_u4E91" class="headerlink" title="谷歌云"></a>谷歌云</h2><p>官网：<a href="https://cloud.google.com" target="_blank" rel="external">https://cloud.google.com</a></p>
+<h2 id="salesforce"><a href="#salesforce" class="headerlink" title="salesforce"></a>salesforce</h2><p>官网：<a href="https://www.salesforce.com/cn/" target="_blank" rel="external">https://www.salesforce.com/cn/</a></p>
+<h2 id="PPPCloud"><a href="#PPPCloud" class="headerlink" title="PPPCloud"></a>PPPCloud</h2><p>官网： <a href="https://www.pppcloud.cn/index.html" target="_blank" rel="external">https://www.pppcloud.cn/index.html</a></p>
+<h2 id="owncloud"><a href="#owncloud" class="headerlink" title="owncloud"></a>owncloud</h2><p>官网：<a href="https://owncloud.org" target="_blank" rel="external">https://owncloud.org</a></p>
+<h1 id="u56FD_u5916"><a href="#u56FD_u5916" class="headerlink" title="国外"></a>国外</h1><h2 id="ramnode"><a href="#ramnode" class="headerlink" title="ramnode"></a>ramnode</h2><p>官网： <a href="http://www.ramnode.com/index.php" target="_blank" rel="external">http://www.ramnode.com/index.php</a></p>
+<h2 id="virmach"><a href="#virmach" class="headerlink" title="virmach"></a>virmach</h2><p>官网：<a href="http://virmach.com" target="_blank" rel="external">http://virmach.com</a></p>
+<h2 id="alpharacks"><a href="#alpharacks" class="headerlink" title="alpharacks"></a>alpharacks</h2><p>官网：<a href="https://www.alpharacks.com/holiday" target="_blank" rel="external">https://www.alpharacks.com/holiday</a><br>年付最低为2.99美元</p>
+<h1 id="VPN"><a href="#VPN" class="headerlink" title="VPN"></a>VPN</h1><h2 id="vyprvpn"><a href="#vyprvpn" class="headerlink" title="vyprvpn"></a>vyprvpn</h2><p>官网： <a href="https://www.goldenfrog.biz/CN/vyprvpn" target="_blank" rel="external">https://www.goldenfrog.biz/CN/vyprvpn</a></p>
+<h2 id="appfog"><a href="#appfog" class="headerlink" title="appfog"></a>appfog</h2><p>官网：<a href="https://www.ctl.io/appfog/" target="_blank" rel="external">https://www.ctl.io/appfog/</a></p>
+]]></content:encoded>
+      <comments>http://nstimer.cn/2016/01/12/%E4%BA%91%E4%B8%BB%E6%9C%BA/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title><![CDATA[阿里ACE搭建wordpress]]></title>
+      <link>http://nstimer.cn/2016/01/11/%E9%98%BF%E9%87%8CACE%E6%90%AD%E5%BB%BAwordpress/</link>
+      <guid>http://nstimer.cn/2016/01/11/%E9%98%BF%E9%87%8CACE%E6%90%AD%E5%BB%BAwordpress/</guid>
+      <pubDate>Mon, 11 Jan 2016 03:31:33 GMT</pubDate>
+      <description>
+      <![CDATA[<h2 id="u642D_u5EFA_u73AF_u5883"><a href="#u642D_u5EFA_u73AF_u5883" class="headerlink" title="搭建环境"></a>搭建环境</h2><h3 id="u521B_u5EFA_u5E94_u]]>
+      </description>
+      <content:encoded><![CDATA[<h2 id="u642D_u5EFA_u73AF_u5883"><a href="#u642D_u5EFA_u73AF_u5883" class="headerlink" title="搭建环境"></a>搭建环境</h2><h3 id="u521B_u5EFA_u5E94_u7528"><a href="#u521B_u5EFA_u5E94_u7528" class="headerlink" title="创建应用"></a>创建应用</h3><p>wordpress需要php环境，所以创建环境的时候必须选择php</p>
+<h3 id="u521B_u5EFA_u6570_u636E_u5E93"><a href="#u521B_u5EFA_u6570_u636E_u5E93" class="headerlink" title="创建数据库"></a>创建数据库</h3><p>数据库创建很简单，一路点下去即可。创建完成之后的信息以后会用到</p>
+<h3 id="u4E0B_u8F7Dwordpress_u5B89_u88C5_u7A0B_u5E8F"><a href="#u4E0B_u8F7Dwordpress_u5B89_u88C5_u7A0B_u5E8F" class="headerlink" title="下载wordpress安装程序"></a>下载wordpress安装程序</h3><p>在<a href="http://cn.wordpress.org" target="_blank" rel="external">wordpress</a>官网下载最新版的<code>wordpress</code></p>
+<h2 id="u4EE3_u7801_u63A7_u5236"><a href="#u4EE3_u7801_u63A7_u5236" class="headerlink" title="代码控制"></a>代码控制</h2><p>ACE默认使用SVN来控制代码。</p>
+<h3 id="SVN_u521B_u5EFA"><a href="#SVN_u521B_u5EFA" class="headerlink" title="SVN创建"></a>SVN创建</h3><p>默认情况下，新建php应用之后，SVN是自动创建的，只需要checkout到本地就可以了。</p>
+<h3 id="SVN_u64CD_u4F5C"><a href="#SVN_u64CD_u4F5C" class="headerlink" title="SVN操作"></a>SVN操作</h3><p>命令行操作请看此处<a href="http://zhengkun.readthedocs.org/zh_CN/latest/2014/02/07/svn-usage/" target="_blank" rel="external">http://zhengkun.readthedocs.org/zh_CN/latest/2014/02/07/svn-usage/</a></p>
+<h2 id="u76F8_u5173_u914D_u7F6E"><a href="#u76F8_u5173_u914D_u7F6E" class="headerlink" title="相关配置"></a>相关配置</h2><h3 id="wordpress_u914D_u7F6E"><a href="#wordpress_u914D_u7F6E" class="headerlink" title="wordpress配置"></a>wordpress配置</h3><p>将wordpress自带的<code>wp-config-sample.php</code>重命名为<code>wp-config.php</code>，并将相关内容替换为上面新建的数据库的相关内容：</p>
+
+<blockquote>
+<p>这里特别注意，在修改<code>wp-config.php</code>文件时，要注意英文<code>&#39;</code>和中文<code>‘</code>,这会导致php报语法错误。</p>
+</blockquote>
+<h2 id="u5927_u529F_u544A_u6210"><a href="#u5927_u529F_u544A_u6210" class="headerlink" title="大功告成"></a>大功告成</h2><p>访问你创建应用时的二级域名<code>xxx.aliyun.com</code>，可以看到如下内容：<br></p>
+<blockquote>
+<p><a href="http://bbs.aliyun.com/read/170142.html?spm=5176.bbsr262159.0.0.eozbuC" target="_blank" rel="external">http://bbs.aliyun.com/read/170142.html?spm=5176.bbsr262159.0.0.eozbuC</a></p>
+</blockquote>
+]]></content:encoded>
+      <comments>http://nstimer.cn/2016/01/11/%E9%98%BF%E9%87%8CACE%E6%90%AD%E5%BB%BAwordpress/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title><![CDATA[[饥荒]修改联机人数上限]]></title>
+      <link>http://nstimer.cn/2016/01/05/%E9%A5%A5%E8%8D%92-%E4%BF%AE%E6%94%B9%E8%81%94%E6%9C%BA%E4%BA%BA%E6%95%B0%E4%B8%8A%E9%99%90/</link>
+      <guid>http://nstimer.cn/2016/01/05/%E9%A5%A5%E8%8D%92-%E4%BF%AE%E6%94%B9%E8%81%94%E6%9C%BA%E4%BA%BA%E6%95%B0%E4%B8%8A%E9%99%90/</guid>
+      <pubDate>Tue, 05 Jan 2016 04:25:17 GMT</pubDate>
+      <description>
+      <![CDATA[<p>Windows下找到<code>Steam\steamapps\common\Don&#39;t Starve Together\data\scripts\tuning.lua</code><br>修改<code>MAX_SERVER_SIZE = 20</code><br]]>
+      </description>
+      <content:encoded><![CDATA[<p>Windows下找到<code>Steam\steamapps\common\Don&#39;t Starve Together\data\scripts\tuning.lua</code><br>修改<code>MAX_SERVER_SIZE = 20</code><br><img src="d5da687690.jpg" alt=""></p>
+]]></content:encoded>
+      <comments>http://nstimer.cn/2016/01/05/%E9%A5%A5%E8%8D%92-%E4%BF%AE%E6%94%B9%E8%81%94%E6%9C%BA%E4%BA%BA%E6%95%B0%E4%B8%8A%E9%99%90/#disqus_thread</comments>
+    </item>
     
     <item>
       <title><![CDATA[IJKMediaPlayer静态库制作]]></title>
@@ -95,12 +159,13 @@
       </description>
       <content:encoded><![CDATA[<h2 id="u7EFC_u5408_u7C7B"><a href="#u7EFC_u5408_u7C7B" class="headerlink" title="综合类"></a>综合类</h2><p><a href="http://zengrong.net" target="_blank" rel="external">zrong’s blog</a><br><a href="http://deerchao.net/" target="_blank" rel="external">钊哥博客</a></p>
 <p><a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="external">justjavac/free-programming-books-zh_CN</a><br><a href="https://github.com/nemoTyrant/manong" target="_blank" rel="external">nemoTyrant/manong</a><br><a href="http://wsgzao.github.io" target="_blank" rel="external">HelloDog</a><br><a href="http://www.jubushoushen.com" target="_blank" rel="external">菊部受审</a><br><a href="http://blog.saymagic.cn" target="_blank" rel="external">saymagic</a><br><a href="http://www.itoldme.net" target="_blank" rel="external">墙外的梯子</a><br><a href="http://lutaf.com" target="_blank" rel="external">鲁塔弗的博客</a><br><a href="http://laod.cn" target="_blank" rel="external">老D博客</a><br><a href="http://xote.tk" target="_blank" rel="external">乱码周刊</a><br><a href="http://colobu.com" target="_blank" rel="external">鸟窝</a><br><a href="http://ppting.me" target="_blank" rel="external">PPTing</a><br><a href="http://zipperary.com" target="_blank" rel="external">zipperary</a><br><a href="http://lukang.me" target="_blank" rel="external">lukang</a><br><a href="http://www.ixirong.com" target="_blank" rel="external">ixirong</a><br><a href="www.swiftcafe.io">swiftcafe</a></p>
-<h2 id="u670D_u52A1_u5668"><a href="#u670D_u52A1_u5668" class="headerlink" title="服务器"></a>服务器</h2><p><a href="http://blog.bbzhh.com" target="_blank" rel="external">Tan9le的博客</a><br><a href="http://www.laozuo.org/" target="_blank" rel="external">老左博客</a><br><a href="http://lnmp.org/" target="_blank" rel="external">LNMP一键安装包</a><br><a href="http://www.itbulu.com/" target="_blank" rel="external">老蒋部落</a><br><a href="http://www.dabu.info/" target="_blank" rel="external">大步’s Blog</a><br><a href="http://blog.maryopen.com/" target="_blank" rel="external">三十 | 马力全开</a><br><a href="https://quericy.me/blog" target="_blank" rel="external">quericy Eden</a><br><a href="http://www.danbaise.com/" target="_blank" rel="external">淡白色</a><br><a href="http://www.tennfy.com" target="_blank" rel="external">TENNFY WU</a><br><a href="http://www.ihunter.me/" target="_blank" rel="external">Hunter的时光机器</a><br><a href="http://blog.maryopen.com" target="_blank" rel="external">maryopen</a><br><a href="http://blog.ssccsu.com" target="_blank" rel="external">SSCCSU</a><br><a href="https://blog.phpgao.com" target="_blank" rel="external">老高的技术博客</a><br><a href="http://xiaorui.cc" target="_blank" rel="external">小rui</a></p>
+<h2 id="u670D_u52A1_u5668"><a href="#u670D_u52A1_u5668" class="headerlink" title="服务器"></a>服务器</h2><p><a href="http://blog.bbzhh.com" target="_blank" rel="external">Tan9le的博客</a><br><a href="http://www.laozuo.org/" target="_blank" rel="external">老左博客</a><br><a href="http://lnmp.org/" target="_blank" rel="external">LNMP一键安装包</a><br><a href="http://www.itbulu.com/" target="_blank" rel="external">老蒋部落</a><br><a href="http://www.dabu.info/" target="_blank" rel="external">大步’s Blog</a><br><a href="http://blog.maryopen.com/" target="_blank" rel="external">三十 | 马力全开</a><br><a href="https://quericy.me/blog" target="_blank" rel="external">quericy Eden</a><br><a href="http://www.danbaise.com/" target="_blank" rel="external">淡白色</a><br><a href="http://www.tennfy.com" target="_blank" rel="external">TENNFY WU</a><br><a href="http://www.ihunter.me/" target="_blank" rel="external">Hunter的时光机器</a><br><a href="http://blog.maryopen.com" target="_blank" rel="external">maryopen</a><br><a href="http://blog.ssccsu.com" target="_blank" rel="external">SSCCSU</a><br><a href="https://blog.phpgao.com" target="_blank" rel="external">老高的技术博客</a><br><a href="http://xiaorui.cc" target="_blank" rel="external">小rui</a><br><a href="http://chitanda.me" target="_blank" rel="external">我很好奇</a></p>
 <h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><p><a href="http://dockone.io" target="_blank" rel="external">dockone</a></p>
-<h2 id="VPS"><a href="#VPS" class="headerlink" title="VPS"></a>VPS</h2><p><a href="http://www.vpser.net" target="_blank" rel="external">VPS侦探</a><br><a href="http://www.bandwagong.com" target="_blank" rel="external">搬瓦工VPS</a><br><a href="http://banwagong.cn/" target="_blank" rel="external">搬瓦工VPS中文网</a><br><a href="http://www.angely.org" target="_blank" rel="external">优惠码每天一帖</a><br><a href="http://www.youhuima.cc/" target="_blank" rel="external">优惠码.嚓嚓</a><br><a href="http://xianhuo.org" target="_blank" rel="external">鲜活优惠码</a><br><a href="http://www.7vps.net/" target="_blank" rel="external">VPS推荐网</a><br><a href="https://vultrcoupons.com/" target="_blank" rel="external">VULTR Coupon Code</a></p>
-<h2 id="VPS_u63A8_u8350"><a href="#VPS_u63A8_u8350" class="headerlink" title="VPS推荐"></a>VPS推荐</h2><p><a href="https://bandwagonhost.com/index.php" target="_blank" rel="external">Bandwagon Host</a><br><a href="https://www.digitalocean.com" target="_blank" rel="external">DigitalOcean</a><br><a href="https://www.linode.com/" target="_blank" rel="external">Linode</a><br><a href="https://www.vultr.com/freetrial/" target="_blank" rel="external">Vultr.com</a><br><a href="https://hostus.us/" target="_blank" rel="external">HostUS</a></p>
+<h2 id="VPS"><a href="#VPS" class="headerlink" title="VPS"></a>VPS</h2><p><a href="http://www.vpser.net" target="_blank" rel="external">VPS侦探</a><br><a href="http://www.bandwagong.com" target="_blank" rel="external">搬瓦工VPS</a><br><a href="http://banwagong.cn/" target="_blank" rel="external">搬瓦工VPS中文网</a><br><a href="http://www.angely.org" target="_blank" rel="external">优惠码每天一帖</a><br><a href="http://www.youhuima.cc/" target="_blank" rel="external">优惠码.嚓嚓</a><br><a href="http://xianhuo.org" target="_blank" rel="external">鲜活优惠码</a><br><a href="http://www.7vps.net/" target="_blank" rel="external">VPS推荐网</a><br><a href="https://vultrcoupons.com/" target="_blank" rel="external">VULTR Coupon Code</a><br><a href="http://www.7vps.net" target="_blank" rel="external">小七博客</a><br><a href="http://lowendbox.com" target="_blank" rel="external"></a><br><a href="http://www.hostingcouponspot.com" target="_blank" rel="external"></a></p>
+<h2 id="VPS_u63A8_u8350"><a href="#VPS_u63A8_u8350" class="headerlink" title="VPS推荐"></a>VPS推荐</h2><p><a href="https://bandwagonhost.com/index.php" target="_blank" rel="external">Bandwagon Host</a><br><a href="https://www.digitalocean.com" target="_blank" rel="external">DigitalOcean</a><br><a href="https://www.linode.com/" target="_blank" rel="external">Linode</a><br><a href="https://www.vultr.com/freetrial/" target="_blank" rel="external">Vultr.com</a><br><a href="https://hostus.us/" target="_blank" rel="external">HostUS</a><br><a href="https://hosthatch.com" target="_blank" rel="external">HostHatch</a><br><a href="www.18vps.com">18vps</a><br><a href="https://www.hawkhost.com" target="_blank" rel="external">老鹰主机</a><br><a href="http://www.weixianghost.com/kvmvps" target="_blank" rel="external">维翔主机</a></p>
 <p><a href="https://www.openshift.com/" target="_blank" rel="external">OpenShift</a><br><a href="https://hub.docker.com/" target="_blank" rel="external">Docker</a></p>
-<h2 id="u9999_u6E2FVPS"><a href="#u9999_u6E2FVPS" class="headerlink" title="香港VPS"></a>香港VPS</h2><p><a href="http://www.hostus.cn" target="_blank" rel="external">Hostus</a></p>
+<h2 id="u9999_u6E2FVPS"><a href="#u9999_u6E2FVPS" class="headerlink" title="香港VPS"></a>香港VPS</h2><p><a href="http://www.hostus.cn" target="_blank" rel="external">Hostus中文网</a><br><a href="http://www.hosthatchvps.com" target="_blank" rel="external">HostHatch中文网</a></p>
+<h2 id="u65E5_u672CVPS"><a href="#u65E5_u672CVPS" class="headerlink" title="日本VPS"></a>日本VPS</h2><p><a href="https://www.conoha.jp/zh" target="_blank" rel="external">Conoha</a></p>
 <h2 id="u56FD_u5185VPS"><a href="#u56FD_u5185VPS" class="headerlink" title="国内VPS"></a>国内VPS</h2><p><a href="http://www.alauda.cn" target="_blank" rel="external">灵雀云</a><br><a href="https://www.tenxcloud.com" target="_blank" rel="external">时速云</a><br><a href="http://www.daocloud.io" target="_blank" rel="external">DaoCloud</a><br><a href="https://www.goodrain.com" target="_blank" rel="external">好雨云</a><br><a href="http://csphere.cn/docs/" target="_blank" rel="external">希云</a><br><a href="https://www.shurenyun.com" target="_blank" rel="external">数人云</a><br><a href="https://www.tutum.co" target="_blank" rel="external">tutum</a><br><a href="https://aws.amazon.com/cn/free/?sc_ichannel=ha&amp;sc_icountry=cn&amp;sc_icampaign=ha_cn_FreeTier&amp;sc_icontent=ha_112&amp;sc_idetail=ha_cn_112_1&amp;sc_iplace=ha_cn_hero_cta&amp;sc_isegment=2&amp;" target="_blank" rel="external">amazon免费1年</a></p>
 <h2 id="u4EE3_u7801_u5B66_u4E60"><a href="#u4EE3_u7801_u5B66_u4E60" class="headerlink" title="代码学习"></a>代码学习</h2><h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><p><a href="http://www.ideajava.org/" target="_blank" rel="external">DEA开源社区</a><br><a href="http://www.liaoxuefeng.com/" target="_blank" rel="external">廖雪峰的官方网站</a></p>
 <p><a href="http://deerchao.net/" target="_blank" rel="external">正则表达式&amp;HTML</a><br><a href="http://www.w3school.com.cn/index.html" target="_blank" rel="external">w3school 在线教程</a><br><a href="https://www.codecademy.com/" target="_blank" rel="external">codecademy</a></p>

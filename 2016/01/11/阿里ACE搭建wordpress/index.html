@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=5.0.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo,建站," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -59,16 +59,31 @@
 
 
 
-<meta name="description" content="_config.yml在hexo配置中的地位举足轻重。这篇文章将_config.yml里面的所有配置进行讲解，方便你以后使用。">
+<meta name="description" content="搭建环境创建应用wordpress需要php环境，所以创建环境的时候必须选择php
+创建数据库数据库创建很简单，一路点下去即可。创建完成之后的信息以后会用到
+下载wordpress安装程序在wordpress官网下载最新版的wordpress
+代码控制ACE默认使用SVN来控制代码。
+SVN创建默认情况下，新建php应用之后，SVN是自动创建的，只需要checkout到本地就可以了。
+SVN操作命">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo配置">
-<meta property="og:url" content="http://nstimer.cn/2015/12/24/Hexo配置/index.html">
+<meta property="og:title" content="阿里ACE搭建wordpress">
+<meta property="og:url" content="http://nstimer.cn/2016/01/11/阿里ACE搭建wordpress/index.html">
 <meta property="og:site_name" content="思路人">
-<meta property="og:description" content="_config.yml在hexo配置中的地位举足轻重。这篇文章将_config.yml里面的所有配置进行讲解，方便你以后使用。">
-<meta property="og:updated_time" content="2015-12-25T18:36:52.000Z">
+<meta property="og:description" content="搭建环境创建应用wordpress需要php环境，所以创建环境的时候必须选择php
+创建数据库数据库创建很简单，一路点下去即可。创建完成之后的信息以后会用到
+下载wordpress安装程序在wordpress官网下载最新版的wordpress
+代码控制ACE默认使用SVN来控制代码。
+SVN创建默认情况下，新建php应用之后，SVN是自动创建的，只需要checkout到本地就可以了。
+SVN操作命">
+<meta property="og:updated_time" content="2016-01-12T04:58:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo配置">
-<meta name="twitter:description" content="_config.yml在hexo配置中的地位举足轻重。这篇文章将_config.yml里面的所有配置进行讲解，方便你以后使用。">
+<meta name="twitter:title" content="阿里ACE搭建wordpress">
+<meta name="twitter:description" content="搭建环境创建应用wordpress需要php环境，所以创建环境的时候必须选择php
+创建数据库数据库创建很简单，一路点下去即可。创建完成之后的信息以后会用到
+下载wordpress安装程序在wordpress官网下载最新版的wordpress
+代码控制ACE默认使用SVN来控制代码。
+SVN创建默认情况下，新建php应用之后，SVN是自动创建的，只需要checkout到本地就可以了。
+SVN操作命">
 
 
 
@@ -86,7 +101,7 @@
   };
 </script>
 
-  <title> Hexo配置 | 思路人 </title>
+  <title> 阿里ACE搭建wordpress | 思路人 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -243,7 +258,7 @@
             
             
               
-                Hexo配置
+                阿里ACE搭建wordpress
               
             
           </h1>
@@ -255,38 +270,19 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-12-24T18:10:00+08:00" content="2015-12-24">
-              2015-12-24
+            <time itemprop="dateCreated" datetime="2016-01-11T11:31:33+08:00" content="2016-01-11">
+              2016-01-11
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/建站/" itemprop="url" rel="index">
-                    <span itemprop="name">建站</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/12/24/Hexo配置/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/24/Hexo配置/" itemprop="commentsCount"></span>
+                <a href="/2016/01/11/阿里ACE搭建wordpress/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/11/阿里ACE搭建wordpress/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -296,7 +292,7 @@
 
           
           
-             <span id="/2015/12/24/Hexo配置/" class="leancloud_visitors" data-flag-title="Hexo配置">
+             <span id="/2016/01/11/阿里ACE搭建wordpress/" class="leancloud_visitors" data-flag-title="阿里ACE搭建wordpress">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -316,117 +312,42 @@
       
 
       
-        <blockquote>
-<p>yml语法中，冒号后面必须加<strong>空格</strong>：<br><code>title: 翟强</code></p>
+        <h2 id="u642D_u5EFA_u73AF_u5883"><a href="#u642D_u5EFA_u73AF_u5883" class="headerlink" title="搭建环境"></a>搭建环境</h2><h3 id="u521B_u5EFA_u5E94_u7528"><a href="#u521B_u5EFA_u5E94_u7528" class="headerlink" title="创建应用"></a>创建应用</h3><p>wordpress需要php环境，所以创建环境的时候必须选择php</p>
+<h3 id="u521B_u5EFA_u6570_u636E_u5E93"><a href="#u521B_u5EFA_u6570_u636E_u5E93" class="headerlink" title="创建数据库"></a>创建数据库</h3><p>数据库创建很简单，一路点下去即可。创建完成之后的信息以后会用到</p>
+<h3 id="u4E0B_u8F7Dwordpress_u5B89_u88C5_u7A0B_u5E8F"><a href="#u4E0B_u8F7Dwordpress_u5B89_u88C5_u7A0B_u5E8F" class="headerlink" title="下载wordpress安装程序"></a>下载wordpress安装程序</h3><p>在<a href="http://cn.wordpress.org" target="_blank" rel="external">wordpress</a>官网下载最新版的<code>wordpress</code></p>
+<h2 id="u4EE3_u7801_u63A7_u5236"><a href="#u4EE3_u7801_u63A7_u5236" class="headerlink" title="代码控制"></a>代码控制</h2><p>ACE默认使用SVN来控制代码。</p>
+<h3 id="SVN_u521B_u5EFA"><a href="#SVN_u521B_u5EFA" class="headerlink" title="SVN创建"></a>SVN创建</h3><p>默认情况下，新建php应用之后，SVN是自动创建的，只需要checkout到本地就可以了。</p>
+<h3 id="SVN_u64CD_u4F5C"><a href="#SVN_u64CD_u4F5C" class="headerlink" title="SVN操作"></a>SVN操作</h3><p>命令行操作请看此处<a href="http://zhengkun.readthedocs.org/zh_CN/latest/2014/02/07/svn-usage/" target="_blank" rel="external">http://zhengkun.readthedocs.org/zh_CN/latest/2014/02/07/svn-usage/</a></p>
+<h2 id="u76F8_u5173_u914D_u7F6E"><a href="#u76F8_u5173_u914D_u7F6E" class="headerlink" title="相关配置"></a>相关配置</h2><h3 id="wordpress_u914D_u7F6E"><a href="#wordpress_u914D_u7F6E" class="headerlink" title="wordpress配置"></a>wordpress配置</h3><p>将wordpress自带的<code>wp-config-sample.php</code>重命名为<code>wp-config.php</code>，并将相关内容替换为上面新建的数据库的相关内容：</p>
+
+<blockquote>
+<p>这里特别注意，在修改<code>wp-config.php</code>文件时，要注意英文<code>&#39;</code>和中文<code>‘</code>,这会导致php报语法错误。</p>
 </blockquote>
-<h3 id="u7F51_u7AD9_u914D_u7F6E"><a href="#u7F51_u7AD9_u914D_u7F6E" class="headerlink" title="网站配置"></a>网站配置</h3><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-<th>参考值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>title</td>
-<td>网站标题</td>
-<td>思路人</td>
-</tr>
-<tr>
-<td>subtitle</td>
-<td>网站副标题</td>
-<td>有时候一点点就是一大步</td>
-</tr>
-<tr>
-<td>description</td>
-<td>网站描述</td>
-<td>人生如戏，全靠心细</td>
-</tr>
-<tr>
-<td>author</td>
-<td>作者</td>
-<td>翟强</td>
-</tr>
-<tr>
-<td>language</td>
-<td>网站使用的语言</td>
-<td>zh-Hans</td>
-</tr>
-<tr>
-<td>timezone</td>
-<td>网站时区。一般不用设置</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>读者可以参考本站的具体显示位置来明确每个值的作用。</p>
-<h3 id="u5176_u4ED6_u914D_u7F6E"><a href="#u5176_u4ED6_u914D_u7F6E" class="headerlink" title="其他配置"></a>其他配置</h3><p>笔者本来想把所有参数都讲解一遍，仔细思考之后发现很多参数保持默认设置就好。这里只摘要出笔者认为比较好的一些参数进行讲解。</p>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-<th>默认值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>auto_spacing</td>
-<td>在中文和英文之间加入空格</td>
-<td>false</td>
-</tr>
-<tr>
-<td>external_link</td>
-<td>在新标签中打开链接</td>
-<td>true</td>
-</tr>
-<tr>
-<td>per_page</td>
-<td>每页显示的文章量 (0 = 关闭分页功能)</td>
-<td>10</td>
-</tr>
-<tr>
-<td>theme</td>
-<td>当前主题名称。值为false时禁用主题</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="u90E8_u7F72"><a href="#u90E8_u7F72" class="headerlink" title="部署"></a>部署</h3><p>如果这里进行了设置，hexo就可以自动将内容部署到指定服务器上</p>
-<p>形式为：<br><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">deploy</span>:</span><br><span class="line">  <span class="typedef"><span class="keyword">type</span>: git</span></span><br><span class="line">  repo: &lt;仓库地址&gt;</span><br></pre></td></tr></table></figure></p>
-<p>官网对于部署讲的很清楚，这里就不再赘述，<a href="https://hexo.io/zh-cn/docs/deployment.html" target="_blank" rel="external">请看这里</a></p>
-<h3 id="u793E_u4F1A_u5316_u5206_u4EAB_u8BBE_u7F6E"><a href="#u793E_u4F1A_u5316_u5206_u4EAB_u8BBE_u7F6E" class="headerlink" title="社会化分享设置"></a>社会化分享设置</h3><p>github: <a href="https://github.com/zq4950411" target="_blank" rel="external">https://github.com/zq4950411</a><br>twitter: <a href="https://twitter.com/qiangzhai88" target="_blank" rel="external">https://twitter.com/qiangzhai88</a><br>weibo: <a href="http://weibo.com/1653357857/info" target="_blank" rel="external">http://weibo.com/1653357857/info</a><br>zhihu: <a href="https://www.zhihu.com/people/di-qiang" target="_blank" rel="external">https://www.zhihu.com/people/di-qiang</a></p>
-<h3 id="u66F4_u591A_u8BBE_u7F6E"><a href="#u66F4_u591A_u8BBE_u7F6E" class="headerlink" title="更多设置"></a>更多设置</h3><p>更多设置请<a href="http://theme-next.iissnan.com/third-party-services.html" target="_blank" rel="external">参考这里</a></p>
+<h2 id="u5927_u529F_u544A_u6210"><a href="#u5927_u529F_u544A_u6210" class="headerlink" title="大功告成"></a>大功告成</h2><p>访问你创建应用时的二级域名<code>xxx.aliyun.com</code>，可以看到如下内容：<br></p>
+<blockquote>
+<p><a href="http://bbs.aliyun.com/read/170142.html?spm=5176.bbsr262159.0.0.eozbuC" target="_blank" rel="external">http://bbs.aliyun.com/read/170142.html?spm=5176.bbsr262159.0.0.eozbuC</a></p>
+</blockquote>
 
       
     </div>
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/hexo/" rel="tag">#hexo</a>
-          
-            <a href="/tags/建站/" rel="tag">#建站</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/24/使用Hexo搭建博客/" rel="next" title="使用Hexo搭建博客">
-                <i class="fa fa-chevron-left"></i> 使用Hexo搭建博客
+              <a href="/2016/01/05/饥荒-修改联机人数上限/" rel="next" title="[饥荒]修改联机人数上限">
+                <i class="fa fa-chevron-left"></i> [饥荒]修改联机人数上限
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/12/24/Next主题/" rel="prev" title="Next主题">
-                Next主题 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/01/12/云主机/" rel="prev" title="云主机">
+                云主机 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -442,10 +363,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/12/24/Hexo配置/"
-     data-title="Hexo配置"
+        <div class="ds-share flat" data-thread-key="2016/01/11/阿里ACE搭建wordpress/"
+     data-title="阿里ACE搭建wordpress"
      data-content=""
-     data-url="http://nstimer.cn/2015/12/24/Hexo配置/">
+     data-url="http://nstimer.cn/2016/01/11/阿里ACE搭建wordpress/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -475,8 +396,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/12/24/Hexo配置/"
-           data-title="Hexo配置" data-url="http://nstimer.cn/2015/12/24/Hexo配置/">
+      <div class="ds-thread" data-thread-key="2016/01/11/阿里ACE搭建wordpress/"
+           data-title="阿里ACE搭建wordpress" data-url="http://nstimer.cn/2016/01/11/阿里ACE搭建wordpress/">
       </div>
     
   </div>
@@ -615,7 +536,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u7F51_u7AD9_u914D_u7F6E"><span class="nav-number">1.</span> <span class="nav-text">网站配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5176_u4ED6_u914D_u7F6E"><span class="nav-number">2.</span> <span class="nav-text">其他配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u90E8_u7F72"><span class="nav-number">3.</span> <span class="nav-text">部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u793E_u4F1A_u5316_u5206_u4EAB_u8BBE_u7F6E"><span class="nav-number">4.</span> <span class="nav-text">社会化分享设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u66F4_u591A_u8BBE_u7F6E"><span class="nav-number">5.</span> <span class="nav-text">更多设置</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u642D_u5EFA_u73AF_u5883"><span class="nav-number">1.</span> <span class="nav-text">搭建环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u521B_u5EFA_u5E94_u7528"><span class="nav-number">1.1.</span> <span class="nav-text">创建应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u521B_u5EFA_u6570_u636E_u5E93"><span class="nav-number">1.2.</span> <span class="nav-text">创建数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u4E0B_u8F7Dwordpress_u5B89_u88C5_u7A0B_u5E8F"><span class="nav-number">1.3.</span> <span class="nav-text">下载wordpress安装程序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4EE3_u7801_u63A7_u5236"><span class="nav-number">2.</span> <span class="nav-text">代码控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SVN_u521B_u5EFA"><span class="nav-number">2.1.</span> <span class="nav-text">SVN创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SVN_u64CD_u4F5C"><span class="nav-number">2.2.</span> <span class="nav-text">SVN操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u76F8_u5173_u914D_u7F6E"><span class="nav-number">3.</span> <span class="nav-text">相关配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#wordpress_u914D_u7F6E"><span class="nav-number">3.1.</span> <span class="nav-text">wordpress配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5927_u529F_u544A_u6210"><span class="nav-number">4.</span> <span class="nav-text">大功告成</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
