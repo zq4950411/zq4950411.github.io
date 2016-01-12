@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=5.0.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Git," />
+  <meta name="keywords" content="IOS,Xcode," />
 
 
 
@@ -59,16 +59,18 @@
 
 
 
-<meta name="description" content="本地文件和远程文件建立连接1234git initgit remote add origin &amp;lt;git url&amp;gt;git pull origin mastergit push origin master">
+<meta name="description" content="Xcode插件相关的文章，你只需要看这个就够了">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git使用问题总结">
-<meta property="og:url" content="http://nstimer.cn/2015/12/24/Git使用问题总结/index.html">
+<meta property="og:title" content="Xcode插件详解">
+<meta property="og:url" content="http://nstimer.cn/2016/01/12/Xcode插件详解/index.html">
 <meta property="og:site_name" content="思路人">
-<meta property="og:description" content="本地文件和远程文件建立连接1234git initgit remote add origin &amp;lt;git url&amp;gt;git pull origin mastergit push origin master">
-<meta property="og:updated_time" content="2015-12-24T09:28:20.000Z">
+<meta property="og:description" content="Xcode插件相关的文章，你只需要看这个就够了">
+<meta property="og:image" content="http://nstimer.cn/2016/01/12/Xcode插件详解/menu@2x.png">
+<meta property="og:image" content="http://nstimer.cn/2016/01/12/Xcode插件详解/screenshot@2x.png">
+<meta property="og:updated_time" content="2016-01-12T12:49:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git使用问题总结">
-<meta name="twitter:description" content="本地文件和远程文件建立连接1234git initgit remote add origin &amp;lt;git url&amp;gt;git pull origin mastergit push origin master">
+<meta name="twitter:title" content="Xcode插件详解">
+<meta name="twitter:description" content="Xcode插件相关的文章，你只需要看这个就够了">
 
 
 
@@ -86,7 +88,7 @@
   };
 </script>
 
-  <title> Git使用问题总结 | 思路人 </title>
+  <title> Xcode插件详解 | 思路人 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -243,7 +245,7 @@
             
             
               
-                Git使用问题总结
+                Xcode插件详解
               
             
           </h1>
@@ -255,8 +257,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-12-24T17:00:00+08:00" content="2015-12-24">
-              2015-12-24
+            <time itemprop="dateCreated" datetime="2016-01-12T20:14:35+08:00" content="2016-01-12">
+              2016-01-12
             </time>
           </span>
 
@@ -269,8 +271,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Git/" itemprop="url" rel="index">
-                    <span itemprop="name">Git</span>
+                  <a href="/categories/IOS/" itemprop="url" rel="index">
+                    <span itemprop="name">IOS</span>
                   </a>
                 </span>
 
@@ -285,8 +287,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/12/24/Git使用问题总结/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/24/Git使用问题总结/" itemprop="commentsCount"></span>
+                <a href="/2016/01/12/Xcode插件详解/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/12/Xcode插件详解/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -296,7 +298,7 @@
 
           
           
-             <span id="/2015/12/24/Git使用问题总结/" class="leancloud_visitors" data-flag-title="Git使用问题总结">
+             <span id="/2016/01/12/Xcode插件详解/" class="leancloud_visitors" data-flag-title="Xcode插件详解">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -316,7 +318,31 @@
       
 
       
-        <h3 id="u672C_u5730_u6587_u4EF6_u548C_u8FDC_u7A0B_u6587_u4EF6_u5EFA_u7ACB_u8FDE_u63A5"><a href="#u672C_u5730_u6587_u4EF6_u548C_u8FDC_u7A0B_u6587_u4EF6_u5EFA_u7ACB_u8FDE_u63A5" class="headerlink" title="本地文件和远程文件建立连接"></a>本地文件和远程文件建立连接</h3><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git remote add origin <span class="tag">&lt;git url&gt;</span></span><br><span class="line">git pull origin <span class="keyword">master</span></span><br><span class="line"><span class="title">git</span> push origin <span class="literal">master</span></span><br></pre></td></tr></table></figure>
+        <h2 id="u51C6_u5907"><a href="#u51C6_u5907" class="headerlink" title="准备"></a>准备</h2><p><a href="http://alcatraz.io" target="_blank" rel="external">Alcatraz</a>是Xcode上一个开源(<a href="https://github.com/alcatraz/Alcatraz" target="_blank" rel="external">此处为Github地址</a>)的插件管理器，里面包含了很多优秀的Xcode插件，这些插件可以帮助开发者更高效的完成开发工作。</p>
+<p>关于<code>Alcatraz</code>的安装和卸载，官网上已经给出了具体的操作，这里只是重复一遍，如果操作不成功，请查看官网，使用最新的安装步骤进行安装。</p>
+<h3 id="u5B89_u88C5"><a href="#u5B89_u88C5" class="headerlink" title="安装"></a>安装</h3><p>在<code>Terminal</code>中输入以下内容：</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL http<span class="variable">s:</span>//raw.githubusercontent.<span class="keyword">com</span>/supermarin/Alcatraz/deploy/Scripts/install.<span class="keyword">sh</span> | <span class="keyword">sh</span></span><br></pre></td></tr></table></figure>
+<h3 id="u5378_u8F7D"><a href="#u5378_u8F7D" class="headerlink" title="卸载"></a>卸载</h3><p>在<code>Termimal</code>中输入以下内容：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//删除Alcatraz</span></span><br><span class="line">rm -rf <span class="regexp">~/Library/</span>Application\ Support<span class="regexp">/Developer/</span>Shared<span class="regexp">/Xcode/</span>Plug-ins/Alcatraz.xcplugin</span><br><span class="line"></span><br><span class="line"><span class="comment">//移除所有已下载的插件</span></span><br><span class="line">rm -rf <span class="regexp">~/Library/</span>Application\ Support/Alcatraz</span><br></pre></td></tr></table></figure>
+<h2 id="u4F7F_u7528"><a href="#u4F7F_u7528" class="headerlink" title="使用"></a>使用</h2><h3 id="u6253_u5F00"><a href="#u6253_u5F00" class="headerlink" title="打开"></a>打开</h3><img src="/2016/01/12/Xcode插件详解/menu@2x.png" alt="menu" title="menu">
+<h3 id="u5B89_u88C5_u63D2_u4EF6"><a href="#u5B89_u88C5_u63D2_u4EF6" class="headerlink" title="安装插件"></a>安装插件</h3><img src="/2016/01/12/Xcode插件详解/screenshot@2x.png" alt="screen" title="screen">
+<h2 id="u5E38_u7528_u63D2_u4EF6_u63A8_u8350"><a href="#u5E38_u7528_u63D2_u4EF6_u63A8_u8350" class="headerlink" title="常用插件推荐"></a>常用插件推荐</h2><h3 id="ATProperty"><a href="#ATProperty" class="headerlink" title="ATProperty"></a>ATProperty</h3><p><a href="/posts-sub/2016-01-12-Xcode插件详解/ATProperty.html">相关配置点我</a></p>
+<h3 id="FuzzyAutoComplete"><a href="#FuzzyAutoComplete" class="headerlink" title="FuzzyAutoComplete"></a>FuzzyAutoComplete</h3><p><a href="/posts-sub/2016-01-12-Xcode插件详解/FuzzyAutoComplete.html">相关配置点我</a></p>
+<h3 id="auto-importer"><a href="#auto-importer" class="headerlink" title="auto-importer"></a>auto-importer</h3><h3 id="ksimagenamed"><a href="#ksimagenamed" class="headerlink" title="ksimagenamed"></a>ksimagenamed</h3><h3 id="vvdocunmenter"><a href="#vvdocunmenter" class="headerlink" title="vvdocunmenter"></a>vvdocunmenter</h3><h3 id="u5176_u4ED6"><a href="#u5176_u4ED6" class="headerlink" title="其他"></a>其他</h3><p>诸如<code>ESJsonFormat</code>、<code>OMColorSense</code>、<code>Peckham</code>、<code>AdjustFontSize</code>等也可以尝试</p>
+<h2 id="u89E3_u60D1"><a href="#u89E3_u60D1" class="headerlink" title="解惑"></a>解惑</h2><h3 id="u63D2_u4EF6_u5931_u6548"><a href="#u63D2_u4EF6_u5931_u6548" class="headerlink" title="插件失效"></a>插件失效</h3><h4 id="u5931_u6548_u539F_u56E0_uFF1A"><a href="#u5931_u6548_u539F_u56E0_uFF1A" class="headerlink" title="失效原因："></a>失效原因：</h4><ol>
+<li>每次更新Xcode后插件都会失效，其实插件都还在这个目录好好的躺着呢：<br>~/Library/Application Support/Developer/Shared/Xcode/Plug-ins </li>
+<li>之所以插件失效，是因为每个插件只供特定UUID的Xcode使用，更新后uuid改变，于是便不能正常使用。</li>
+</ol>
+<h4 id="u89E3_u51B3_u529E_u6CD5_uFF1A"><a href="#u89E3_u51B3_u529E_u6CD5_uFF1A" class="headerlink" title="解决办法："></a>解决办法：</h4><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//先获取Xcode的UUID：</span></span><br><span class="line"></span><br><span class="line">defaults <span class="keyword">read</span> <span class="regexp">/Applications/</span>Xcode.app<span class="regexp">/Contents/I</span>nfo DVTPlugInCompatibilityUUID</span><br><span class="line"></span><br><span class="line"><span class="comment">//再进入插件目录：</span></span><br><span class="line">~<span class="regexp">/Library/</span>Application Support<span class="regexp">/Developer/</span>Shared<span class="regexp">/Xcode/</span>Plugins</span><br><span class="line"> </span><br><span class="line"><span class="comment">//右键显示包内容，编辑Info.plist文件：</span></span><br><span class="line">展开DVTPlugInCompatibilityUUIDs 添加一个新的Item存储Xcode的UUID。</span><br></pre></td></tr></table></figure>
+<p>如果你觉得上述操作太麻烦，那么可以尝试这个操作：（批量更新插件的 DVTPlugInCompatibilityUUID 的命令（建议使用sudo方式执行））</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">find</span> ~<span class="regexp">/Library/</span>Application\ Support<span class="regexp">/Developer/</span>Shared<span class="regexp">/Xcode/</span>Plug-ins -name Info.plist -maxdepth <span class="number">3</span> | xargs -I&#123;&#125; defaults <span class="keyword">write</span> &#123;&#125; DVTPlugInCompatibilityUUIDs -array-add `defaults <span class="keyword">read</span> <span class="regexp">/Applications/</span>Xcode.app<span class="regexp">/Contents/I</span>nfo DVTPlugInCompatibilityUUID`</span><br></pre></td></tr></table></figure>
+<h3 id="u624B_u6B8B_u70B9_u51FB_u4E86_u201DSkip_Bundle_u201D_u80BF_u4E48_u529E"><a href="#u624B_u6B8B_u70B9_u51FB_u4E86_u201DSkip_Bundle_u201D_u80BF_u4E48_u529E" class="headerlink" title="手残点击了”Skip Bundle”肿么办"></a>手残点击了”Skip Bundle”肿么办</h3><ol>
+<li>进入插件目录(<code>~/Library/Application Support/Developer/Shared/Xcode/Plugins</code>)，选择已安装的插件如:VVDocumenter-Xcode,<strong>右键</strong>显示包内容,找到<code>info.plist</code></li>
+<li>删除<code>info.plist</code>最后一个与命令端里面同样的UUID号，一般都是会在最后一行，自己添加的那一行也要删除掉</li>
+<li>保存之后重启Xcode</li>
+<li>再次添加之前Xcode的UUID。重启Xcode就会再次出现插件提示</li>
+</ol>
+
       
     </div>
 
@@ -324,7 +350,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Git/" rel="tag">#Git</a>
+            <a href="/tags/IOS/" rel="tag">#IOS</a>
+          
+            <a href="/tags/Xcode/" rel="tag">#Xcode</a>
           
         </div>
       
@@ -333,17 +361,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/24/个人博客搭建/" rel="next" title="个人博客搭建">
-                <i class="fa fa-chevron-left"></i> 个人博客搭建
+              <a href="/2016/01/12/UITextView/" rel="next" title="UITextView">
+                <i class="fa fa-chevron-left"></i> UITextView
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/12/24/使用Hexo搭建博客/" rel="prev" title="使用Hexo搭建博客">
-                使用Hexo搭建博客 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -358,10 +382,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/12/24/Git使用问题总结/"
-     data-title="Git使用问题总结"
+        <div class="ds-share flat" data-thread-key="2016/01/12/Xcode插件详解/"
+     data-title="Xcode插件详解"
      data-content=""
-     data-url="http://nstimer.cn/2015/12/24/Git使用问题总结/">
+     data-url="http://nstimer.cn/2016/01/12/Xcode插件详解/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -391,8 +415,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/12/24/Git使用问题总结/"
-           data-title="Git使用问题总结" data-url="http://nstimer.cn/2015/12/24/Git使用问题总结/">
+      <div class="ds-thread" data-thread-key="2016/01/12/Xcode插件详解/"
+           data-title="Xcode插件详解" data-url="http://nstimer.cn/2016/01/12/Xcode插件详解/">
       </div>
     
   </div>
@@ -531,7 +555,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u672C_u5730_u6587_u4EF6_u548C_u8FDC_u7A0B_u6587_u4EF6_u5EFA_u7ACB_u8FDE_u63A5"><span class="nav-number">1.</span> <span class="nav-text">本地文件和远程文件建立连接</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u51C6_u5907"><span class="nav-number">1.</span> <span class="nav-text">准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u5B89_u88C5"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5378_u8F7D"><span class="nav-number">1.2.</span> <span class="nav-text">卸载</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4F7F_u7528"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u6253_u5F00"><span class="nav-number">2.1.</span> <span class="nav-text">打开</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5B89_u88C5_u63D2_u4EF6"><span class="nav-number">2.2.</span> <span class="nav-text">安装插件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5E38_u7528_u63D2_u4EF6_u63A8_u8350"><span class="nav-number">3.</span> <span class="nav-text">常用插件推荐</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ATProperty"><span class="nav-number">3.1.</span> <span class="nav-text">ATProperty</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FuzzyAutoComplete"><span class="nav-number">3.2.</span> <span class="nav-text">FuzzyAutoComplete</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#auto-importer"><span class="nav-number">3.3.</span> <span class="nav-text">auto-importer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ksimagenamed"><span class="nav-number">3.4.</span> <span class="nav-text">ksimagenamed</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vvdocunmenter"><span class="nav-number">3.5.</span> <span class="nav-text">vvdocunmenter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5176_u4ED6"><span class="nav-number">3.6.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u89E3_u60D1"><span class="nav-number">4.</span> <span class="nav-text">解惑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u63D2_u4EF6_u5931_u6548"><span class="nav-number">4.1.</span> <span class="nav-text">插件失效</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u5931_u6548_u539F_u56E0_uFF1A"><span class="nav-number">4.1.1.</span> <span class="nav-text">失效原因：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u89E3_u51B3_u529E_u6CD5_uFF1A"><span class="nav-number">4.1.2.</span> <span class="nav-text">解决办法：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u624B_u6B8B_u70B9_u51FB_u4E86_u201DSkip_Bundle_u201D_u80BF_u4E48_u529E"><span class="nav-number">4.2.</span> <span class="nav-text">手残点击了”Skip Bundle”肿么办</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

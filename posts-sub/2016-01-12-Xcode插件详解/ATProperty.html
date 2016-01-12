@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=5.0.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Git," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -59,16 +59,73 @@
 
 
 
-<meta name="description" content="本地文件和远程文件建立连接1234git initgit remote add origin &amp;lt;git url&amp;gt;git pull origin mastergit push origin master">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Git使用问题总结">
-<meta property="og:url" content="http://nstimer.cn/2015/12/24/Git使用问题总结/index.html">
+<meta name="description" content="ATProperty设置安装路径~/Library/Application Support/Developer/Shared/Xcode/Plug-ins
+使用Common
+
+
+typein
+result
+
+
+
+
+@t
+@property (nonatomic, strong)
+
+
+@w
+@property (nonatomic, weak)
+
+
+@y
+@property (nonatomic,">
+<meta property="og:type" content="website">
+<meta property="og:title" content="思路人">
+<meta property="og:url" content="http://nstimer.cn/posts-sub/2016-01-12-Xcode插件详解/ATProperty.html">
 <meta property="og:site_name" content="思路人">
-<meta property="og:description" content="本地文件和远程文件建立连接1234git initgit remote add origin &amp;lt;git url&amp;gt;git pull origin mastergit push origin master">
-<meta property="og:updated_time" content="2015-12-24T09:28:20.000Z">
+<meta property="og:description" content="ATProperty设置安装路径~/Library/Application Support/Developer/Shared/Xcode/Plug-ins
+使用Common
+
+
+typein
+result
+
+
+
+
+@t
+@property (nonatomic, strong)
+
+
+@w
+@property (nonatomic, weak)
+
+
+@y
+@property (nonatomic,">
+<meta property="og:updated_time" content="2016-01-12T12:52:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git使用问题总结">
-<meta name="twitter:description" content="本地文件和远程文件建立连接1234git initgit remote add origin &amp;lt;git url&amp;gt;git pull origin mastergit push origin master">
+<meta name="twitter:title" content="思路人">
+<meta name="twitter:description" content="ATProperty设置安装路径~/Library/Application Support/Developer/Shared/Xcode/Plug-ins
+使用Common
+
+
+typein
+result
+
+
+
+
+@t
+@property (nonatomic, strong)
+
+
+@w
+@property (nonatomic, weak)
+
+
+@y
+@property (nonatomic,">
 
 
 
@@ -86,7 +143,13 @@
   };
 </script>
 
-  <title> Git使用问题总结 | 思路人 </title>
+  <title>
+  
+
+  
+     | 思路人
+  
+</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -122,7 +185,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-left  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -224,175 +287,136 @@
 
   <div id="posts" class="posts-expand">
     
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    
+      <h1 id="ATProperty_u8BBE_u7F6E"><a href="#ATProperty_u8BBE_u7F6E" class="headerlink" title="ATProperty设置"></a>ATProperty设置</h1><h2 id="u5B89_u88C5_u8DEF_u5F84"><a href="#u5B89_u88C5_u8DEF_u5F84" class="headerlink" title="安装路径"></a>安装路径</h2><pre><code>~/Library/Application Support/Developer/Shared/Xcode/Plug-ins
+</code></pre><h2 id="u4F7F_u7528"><a href="#u4F7F_u7528" class="headerlink" title="使用"></a>使用</h2><h3 id="Common"><a href="#Common" class="headerlink" title="Common"></a>Common</h3><table>
+<thead>
+<tr>
+<th>typein</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@t</td>
+<td>@property (nonatomic, strong)</td>
+</tr>
+<tr>
+<td>@w</td>
+<td>@property (nonatomic, weak)</td>
+</tr>
+<tr>
+<td>@y</td>
+<td>@property (nonatomic, copy)</td>
+</tr>
+<tr>
+<td>@a</td>
+<td>@property (nonatomic, assign)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Readonly"><a href="#Readonly" class="headerlink" title="Readonly"></a>Readonly</h3><table>
+<thead>
+<tr>
+<th>typein</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@rt</td>
+<td>@property (nonatomic, strong, readonly)</td>
+</tr>
+<tr>
+<td>@rw</td>
+<td>@property (nonatomic, weak, readonly)</td>
+</tr>
+<tr>
+<td>@ry</td>
+<td>@property (nonatomic, copy, readonly)</td>
+</tr>
+<tr>
+<td>@ra</td>
+<td>@property (nonatomic, assign, readonly)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Readwrite"><a href="#Readwrite" class="headerlink" title="Readwrite"></a>Readwrite</h3><table>
+<thead>
+<tr>
+<th>typein</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@xt</td>
+<td>@property (nonatomic, strong, readwrite)</td>
+</tr>
+<tr>
+<td>@xw</td>
+<td>@property (nonatomic, weak, readwrite)</td>
+</tr>
+<tr>
+<td>@xy</td>
+<td>@property (nonatomic, copy, readwrite)</td>
+</tr>
+<tr>
+<td>@xa</td>
+<td>@property (nonatomic, assign, readwrite)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Outlet"><a href="#Outlet" class="headerlink" title="Outlet"></a>Outlet</h3><table>
+<thead>
+<tr>
+<th>typein</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@iw</td>
+<td>@property IBOutlet (nonatomic, weak)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="u8BBE_u7F6E"><a href="#u8BBE_u7F6E" class="headerlink" title="设置"></a>设置</h2><h3 id="u6253_u5F00_u8BBE_u7F6E"><a href="#u6253_u5F00_u8BBE_u7F6E" class="headerlink" title="打开设置"></a>打开设置</h3><pre><code>[Edit]-&gt;[ATProperty](一般位于Edit的最后一项)
+</code></pre><h3 id="u8BBE_u7F6E_u5185_u5BB9"><a href="#u8BBE_u7F6E_u5185_u5BB9" class="headerlink" title="设置内容"></a>设置内容</h3><h4 id="Enabled"><a href="#Enabled" class="headerlink" title="Enabled"></a>Enabled</h4><blockquote>
+<p>选中是启用,不选中则是禁用</p>
+</blockquote>
+<h4 id="Use_nonatomic"><a href="#Use_nonatomic" class="headerlink" title="Use nonatomic"></a>Use nonatomic</h4><blockquote>
+<p>启用</p>
+</blockquote>
+<pre><code>@property (nonatomic, assign) NSString *str;
+</code></pre><blockquote>
+<p>禁用</p>
+</blockquote>
+<pre><code>@property (atomic, assign) NSString *str;
+</code></pre><h4 id="Atomicity_Prefix"><a href="#Atomicity_Prefix" class="headerlink" title="Atomicity Prefix"></a>Atomicity Prefix</h4><blockquote>
+<p>启用</p>
+</blockquote>
+<pre><code>@property (nonatomic, copy) NSString *str;
+</code></pre><blockquote>
+<p>禁用</p>
+</blockquote>
+<pre><code>@property (copy, nonatomic) NSString *str;
+</code></pre><h2 id="Q_26amp_3BA"><a href="#Q_26amp_3BA" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><p>Q: ATProperty不起作用怎么办</p>
+<p>A: 卸载重装</p>
 
     
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                Git使用问题总结
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-12-24T17:00:00+08:00" content="2015-12-24">
-              2015-12-24
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Git/" itemprop="url" rel="index">
-                    <span itemprop="name">Git</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/12/24/Git使用问题总结/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/24/Git使用问题总结/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2015/12/24/Git使用问题总结/" class="leancloud_visitors" data-flag-title="Git使用问题总结">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h3 id="u672C_u5730_u6587_u4EF6_u548C_u8FDC_u7A0B_u6587_u4EF6_u5EFA_u7ACB_u8FDE_u63A5"><a href="#u672C_u5730_u6587_u4EF6_u548C_u8FDC_u7A0B_u6587_u4EF6_u5EFA_u7ACB_u8FDE_u63A5" class="headerlink" title="本地文件和远程文件建立连接"></a>本地文件和远程文件建立连接</h3><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git remote add origin <span class="tag">&lt;git url&gt;</span></span><br><span class="line">git pull origin <span class="keyword">master</span></span><br><span class="line"><span class="title">git</span> push origin <span class="literal">master</span></span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Git/" rel="tag">#Git</a>
-          
-        </div>
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2015/12/24/个人博客搭建/" rel="next" title="个人博客搭建">
-                <i class="fa fa-chevron-left"></i> 个人博客搭建
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/12/24/使用Hexo搭建博客/" rel="prev" title="使用Hexo搭建博客">
-                使用Hexo搭建博客 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </article>
-
-
-
-    <div class="post-spread">
-      
-        <div class="ds-share flat" data-thread-key="2015/12/24/Git使用问题总结/"
-     data-title="Git使用问题总结"
-     data-content=""
-     data-url="http://nstimer.cn/2015/12/24/Git使用问题总结/">
-  <div class="ds-share-inline">
-    <ul  class="ds-share-icons-16">
-
-      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-
-    </ul>
-    <div class="ds-share-icons-more">
-    </div>
-  </div>
-</div>
-      
-    </div>
   </div>
 
 
           </div>
           
-
-  <p>热评文章</p>
-  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
 
 
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/12/24/Git使用问题总结/"
-           data-title="Git使用问题总结" data-url="http://nstimer.cn/2015/12/24/Git使用问题总结/">
+      <div class="ds-thread" data-thread-key="posts-sub/2016-01-12-Xcode插件详解/ATProperty.html"
+           data-title="" data-url="http://nstimer.cn/posts-sub/2016-01-12-Xcode插件详解/ATProperty.html">
       </div>
     
   </div>
@@ -416,17 +440,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://7xpghl.com1.z0.glb.clouddn.com/头像.jpg"
@@ -522,23 +537,6 @@
       </section>
 
       
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc-indicator-top post-toc-indicator">
-            <i class="fa fa-angle-double-up"></i>
-          </div>
-          <div class="post-toc">
-            
-              
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u672C_u5730_u6587_u4EF6_u548C_u8FDC_u7A0B_u6587_u4EF6_u5EFA_u7ACB_u8FDE_u63A5"><span class="nav-number">1.</span> <span class="nav-text">本地文件和远程文件建立连接</span></a></li></ol></div>
-            
-          </div>
-          <div class="post-toc-indicator-bottom post-toc-indicator">
-            <i class="fa fa-angle-double-down"></i>
-          </div>
-        </section>
-      
 
     </div>
   </aside>
@@ -619,167 +617,6 @@
 
 
   
-  
-<script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.0"></script>
-
-<script type="text/javascript" id="sidebar.toc.highlight">
-  $(document).ready(function () {
-    var tocSelector = '.post-toc';
-    var $tocSelector = $(tocSelector);
-    var activeCurrentSelector = '.active-current';
-
-    $tocSelector
-      .on('activate.bs.scrollspy', function () {
-        var $currentActiveElement = $(tocSelector + ' .active').last();
-
-        removeCurrentActiveClass();
-        $currentActiveElement.addClass('active-current');
-
-        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
-      })
-      .on('clear.bs.scrollspy', function () {
-        removeCurrentActiveClass();
-      });
-
-    function removeCurrentActiveClass () {
-      $(tocSelector + ' ' + activeCurrentSelector)
-        .removeClass(activeCurrentSelector.substring(1));
-    }
-
-    function processTOC () {
-      getTOCMaxHeight();
-      toggleTOCOverflowIndicators();
-    }
-
-    function getTOCMaxHeight () {
-      var height = $('.sidebar').height() -
-                   $tocSelector.position().top -
-                   $('.post-toc-indicator-bottom').height();
-
-      $tocSelector.css('height', height);
-
-      return height;
-    }
-
-    function toggleTOCOverflowIndicators () {
-      tocOverflowIndicator(
-        '.post-toc-indicator-top',
-        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
-      );
-
-      tocOverflowIndicator(
-        '.post-toc-indicator-bottom',
-        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
-      )
-    }
-
-    $(document).on('sidebar.motion.complete', function () {
-      processTOC();
-    });
-
-    $('body').scrollspy({ target: tocSelector });
-    $(window).on('resize', function () {
-      if ( $('.sidebar').hasClass('sidebar-active') ) {
-        processTOC();
-      }
-    });
-
-    onScroll($tocSelector);
-
-    function onScroll (element) {
-      element.on('mousewheel DOMMouseScroll', function (event) {
-          var oe = event.originalEvent;
-          var delta = oe.wheelDelta || -oe.detail;
-
-          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
-          event.preventDefault();
-
-          toggleTOCOverflowIndicators();
-      });
-    }
-
-    function tocOverflowIndicator (indicator, action) {
-      var $indicator = $(indicator);
-      var opacity = action === 'show' ? 1 : 0;
-      $indicator.velocity ?
-        $indicator.velocity('stop').velocity({
-          opacity: opacity
-        }, { duration: 100 }) :
-        $indicator.stop().animate({
-          opacity: opacity
-        }, 100);
-    }
-
-  });
-</script>
-
-<script type="text/javascript" id="sidebar.nav">
-  $(document).ready(function () {
-    var html = $('html');
-    var TAB_ANIMATE_DURATION = 200;
-    var hasVelocity = $.isFunction(html.velocity);
-
-    $('.sidebar-nav li').on('click', function () {
-      var item = $(this);
-      var activeTabClassName = 'sidebar-nav-active';
-      var activePanelClassName = 'sidebar-panel-active';
-      if (item.hasClass(activeTabClassName)) {
-        return;
-      }
-
-      var currentTarget = $('.' + activePanelClassName);
-      var target = $('.' + item.data('target'));
-
-      hasVelocity ?
-        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
-          target
-            .velocity('stop')
-            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
-            .addClass(activePanelClassName);
-        }) :
-        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
-          currentTarget.hide();
-          target
-            .stop()
-            .css({'opacity': 0, 'display': 'block'})
-            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
-              currentTarget.removeClass(activePanelClassName);
-              target.addClass(activePanelClassName);
-            });
-        });
-
-      item.siblings().removeClass(activeTabClassName);
-      item.addClass(activeTabClassName);
-    });
-
-    $('.post-toc a').on('click', function (e) {
-      e.preventDefault();
-      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
-      var offset = $(targetSelector).offset().top;
-      hasVelocity ?
-        html.velocity('stop').velocity('scroll', {
-          offset: offset  + 'px',
-          mobileHA: false
-        }) :
-        $('html, body').stop().animate({
-          scrollTop: offset
-        }, 500);
-    });
-
-    // Expand sidebar on post detail page by default, when post has a toc.
-    NexT.motion.middleWares.sidebar = function () {
-      var $tocContent = $('.post-toc-content');
-
-      if (CONFIG.sidebar === 'post') {
-        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-          NexT.utils.displaySidebar();
-        }
-      }
-    };
-  });
-</script>
-
-
 
   
 
