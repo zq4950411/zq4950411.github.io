@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=5.0.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="IOS,UITextView," />
 
 
 
@@ -59,25 +59,16 @@
 
 
 
-<meta name="description" content="OC中如何定义一个Block?As a local variable:
-1returnType (^blockName)(parameterTypes) = ^returnType(parameters) &amp;#123;...&amp;#125;;
-As a property:
-1@property (nonatomic, copy) returnType (^blockName)(parameterTyp">
+<meta name="description" content="设置行间距123456789NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];paragraphStyle.lineSpacing = 5;// 字体的行间距NSDictionary *attributes = @&amp;#123;                             NS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Block创建">
-<meta property="og:url" content="http://nstimer.cn/2015/12/30/Block创建/index.html">
+<meta property="og:title" content="UITextView">
+<meta property="og:url" content="http://nstimer.cn/2016/01/12/UITextView/index.html">
 <meta property="og:site_name" content="思路人">
-<meta property="og:description" content="OC中如何定义一个Block?As a local variable:
-1returnType (^blockName)(parameterTypes) = ^returnType(parameters) &amp;#123;...&amp;#125;;
-As a property:
-1@property (nonatomic, copy) returnType (^blockName)(parameterTyp">
-<meta property="og:updated_time" content="2015-12-30T07:01:37.000Z">
+<meta property="og:description" content="设置行间距123456789NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];paragraphStyle.lineSpacing = 5;// 字体的行间距NSDictionary *attributes = @&amp;#123;                             NS">
+<meta property="og:updated_time" content="2016-01-12T12:03:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Block创建">
-<meta name="twitter:description" content="OC中如何定义一个Block?As a local variable:
-1returnType (^blockName)(parameterTypes) = ^returnType(parameters) &amp;#123;...&amp;#125;;
-As a property:
-1@property (nonatomic, copy) returnType (^blockName)(parameterTyp">
+<meta name="twitter:title" content="UITextView">
+<meta name="twitter:description" content="设置行间距123456789NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];paragraphStyle.lineSpacing = 5;// 字体的行间距NSDictionary *attributes = @&amp;#123;                             NS">
 
 
 
@@ -95,7 +86,7 @@ As a property:
   };
 </script>
 
-  <title> Block创建 | 思路人 </title>
+  <title> UITextView | 思路人 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -252,7 +243,7 @@ As a property:
             
             
               
-                Block创建
+                UITextView
               
             
           </h1>
@@ -264,19 +255,38 @@ As a property:
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-12-30T15:00:56+08:00" content="2015-12-30">
-              2015-12-30
+            <time itemprop="dateCreated" datetime="2016-01-12T19:50:27+08:00" content="2016-01-12">
+              2016-01-12
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/IOS/" itemprop="url" rel="index">
+                    <span itemprop="name">IOS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/12/30/Block创建/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/30/Block创建/" itemprop="commentsCount"></span>
+                <a href="/2016/01/12/UITextView/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/12/UITextView/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -286,7 +296,7 @@ As a property:
 
           
           
-             <span id="/2015/12/30/Block创建/" class="leancloud_visitors" data-flag-title="Block创建">
+             <span id="/2016/01/12/UITextView/" class="leancloud_visitors" data-flag-title="UITextView">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -306,41 +316,33 @@ As a property:
       
 
       
-        <h1 id="OC_u4E2D_u5982_u4F55_u5B9A_u4E49_u4E00_u4E2ABlock_3F"><a href="#OC_u4E2D_u5982_u4F55_u5B9A_u4E49_u4E00_u4E2ABlock_3F" class="headerlink" title="OC中如何定义一个Block?"></a>OC中如何定义一个Block?</h1><p>As a local variable:</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">returnType (^blockName)(parameterTypes) = ^returnType(parameters) &#123;...&#125;;</span><br></pre></td></tr></table></figure>
-<p>As a property:</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) returnType (^blockName)(parameterTypes);</span><br></pre></td></tr></table></figure>
-<p>As a method parameter:</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)someMethodThatTakesABlock:(returnType (^)(parameterTypes))blockName;</span><br></pre></td></tr></table></figure>
-<p>As an argument to a method call:</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[someObject someMethodThatTakesABlock:^returnType (parameters) &#123;...&#125;];</span><br></pre></td></tr></table></figure>
-<p>As a typedef:</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> returnType (^TypeName)(parameterTypes);</span><br><span class="line">TypeName blockName = ^returnType(parameters) &#123;...&#125;;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>参考:<br><a href="http://fuckingblocksyntax.com" target="_blank" rel="external">http://fuckingblocksyntax.com</a><br><a href="http://goshdarnblocksyntax.com" target="_blank" rel="external">http://goshdarnblocksyntax.com</a></p>
-</blockquote>
-
+        <h2 id="u8BBE_u7F6E_u884C_u95F4_u8DDD"><a href="#u8BBE_u7F6E_u884C_u95F4_u8DDD" class="headerlink" title="设置行间距"></a>设置行间距</h2><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSMutableParagraphStyle</span> *paragraphStyle = [[<span class="built_in">NSMutableParagraphStyle</span> alloc] init];</span><br><span class="line">paragraphStyle<span class="variable">.lineSpacing</span> = <span class="number">5</span>;<span class="comment">// 字体的行间距</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">NSDictionary</span> *attributes = @&#123;</span><br><span class="line">                             <span class="built_in">NSFontAttributeName</span>:[<span class="built_in">UIFont</span> systemFontOfSize:<span class="number">12</span>],</span><br><span class="line">                             <span class="built_in">NSParagraphStyleAttributeName</span>:paragraphStyle,</span><br><span class="line">                             <span class="built_in">NSForegroundColorAttributeName</span> : XWColor(<span class="number">140</span>, <span class="number">140</span>, <span class="number">140</span>)</span><br><span class="line">                             &#125;;</span><br><span class="line">textView<span class="variable">.attributedText</span> = [[<span class="built_in">NSAttributedString</span> alloc] initWithString:textView<span class="variable">.text</span> attributes:attributes];</span><br></pre></td></tr></table></figure>
+<h2 id="u8BBE_u7F6E_u6587_u672C_u5BB9_u5668_u5927_u5C0F"><a href="#u8BBE_u7F6E_u6587_u672C_u5BB9_u5668_u5927_u5C0F" class="headerlink" title="设置文本容器大小"></a>设置文本容器大小</h2><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">textView<span class="variable">.textContainerInset</span> = <span class="built_in">UIEdgeInsetsMake</span>(<span class="number">7</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">7</span>);</span><br></pre></td></tr></table></figure>
       
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/IOS/" rel="tag">#IOS</a>
+          
+            <a href="/tags/UITextView/" rel="tag">#UITextView</a>
+          
+        </div>
       
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/30/博客推荐/" rel="next" title="博客推荐">
-                <i class="fa fa-chevron-left"></i> 博客推荐
+              <a href="/2016/01/12/UITextField/" rel="next" title="UITextField">
+                <i class="fa fa-chevron-left"></i> UITextField
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/12/30/IJKMediaPlayer静态库制作/" rel="prev" title="IJKMediaPlayer静态库制作">
-                IJKMediaPlayer静态库制作 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -355,10 +357,10 @@ As a property:
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/12/30/Block创建/"
-     data-title="Block创建"
+        <div class="ds-share flat" data-thread-key="2016/01/12/UITextView/"
+     data-title="UITextView"
      data-content=""
-     data-url="http://nstimer.cn/2015/12/30/Block创建/">
+     data-url="http://nstimer.cn/2016/01/12/UITextView/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -388,8 +390,8 @@ As a property:
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/12/30/Block创建/"
-           data-title="Block创建" data-url="http://nstimer.cn/2015/12/30/Block创建/">
+      <div class="ds-thread" data-thread-key="2016/01/12/UITextView/"
+           data-title="UITextView" data-url="http://nstimer.cn/2016/01/12/UITextView/">
       </div>
     
   </div>
@@ -528,7 +530,7 @@ As a property:
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OC_u4E2D_u5982_u4F55_u5B9A_u4E49_u4E00_u4E2ABlock_3F"><span class="nav-number">1.</span> <span class="nav-text">OC中如何定义一个Block?</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u8BBE_u7F6E_u884C_u95F4_u8DDD"><span class="nav-number">1.</span> <span class="nav-text">设置行间距</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u8BBE_u7F6E_u6587_u672C_u5BB9_u5668_u5927_u5C0F"><span class="nav-number">2.</span> <span class="nav-text">设置文本容器大小</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

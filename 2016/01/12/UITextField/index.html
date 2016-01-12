@@ -59,25 +59,23 @@
 
 
 
-<meta name="description" content="OC中如何定义一个Block?As a local variable:
-1returnType (^blockName)(parameterTypes) = ^returnType(parameters) &amp;#123;...&amp;#125;;
-As a property:
-1@property (nonatomic, copy) returnType (^blockName)(parameterTyp">
+<meta name="description" content="明暗文密码切换时光标位置不对
+12解决方案:在切换明文暗文的方法上写入 [self.oldPwdTextField becomeFirstResponder];
+加入了scrollView导致,监听键盘退出失效12345678910111213141516解决方案:给scrollView增加一个分类,并重写以下几个方法- (void)touchesBegan:(NSSet *)touches wi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Block创建">
-<meta property="og:url" content="http://nstimer.cn/2015/12/30/Block创建/index.html">
+<meta property="og:title" content="UITextField">
+<meta property="og:url" content="http://nstimer.cn/2016/01/12/UITextField/index.html">
 <meta property="og:site_name" content="思路人">
-<meta property="og:description" content="OC中如何定义一个Block?As a local variable:
-1returnType (^blockName)(parameterTypes) = ^returnType(parameters) &amp;#123;...&amp;#125;;
-As a property:
-1@property (nonatomic, copy) returnType (^blockName)(parameterTyp">
-<meta property="og:updated_time" content="2015-12-30T07:01:37.000Z">
+<meta property="og:description" content="明暗文密码切换时光标位置不对
+12解决方案:在切换明文暗文的方法上写入 [self.oldPwdTextField becomeFirstResponder];
+加入了scrollView导致,监听键盘退出失效12345678910111213141516解决方案:给scrollView增加一个分类,并重写以下几个方法- (void)touchesBegan:(NSSet *)touches wi">
+<meta property="og:image" content="http://nstimer.cn/2016/01/12/UITextField/mima.jpeg">
+<meta property="og:updated_time" content="2016-01-12T12:08:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Block创建">
-<meta name="twitter:description" content="OC中如何定义一个Block?As a local variable:
-1returnType (^blockName)(parameterTypes) = ^returnType(parameters) &amp;#123;...&amp;#125;;
-As a property:
-1@property (nonatomic, copy) returnType (^blockName)(parameterTyp">
+<meta name="twitter:title" content="UITextField">
+<meta name="twitter:description" content="明暗文密码切换时光标位置不对
+12解决方案:在切换明文暗文的方法上写入 [self.oldPwdTextField becomeFirstResponder];
+加入了scrollView导致,监听键盘退出失效12345678910111213141516解决方案:给scrollView增加一个分类,并重写以下几个方法- (void)touchesBegan:(NSSet *)touches wi">
 
 
 
@@ -95,7 +93,7 @@ As a property:
   };
 </script>
 
-  <title> Block创建 | 思路人 </title>
+  <title> UITextField | 思路人 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -252,7 +250,7 @@ As a property:
             
             
               
-                Block创建
+                UITextField
               
             
           </h1>
@@ -264,8 +262,8 @@ As a property:
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-12-30T15:00:56+08:00" content="2015-12-30">
-              2015-12-30
+            <time itemprop="dateCreated" datetime="2016-01-12T19:50:12+08:00" content="2016-01-12">
+              2016-01-12
             </time>
           </span>
 
@@ -275,8 +273,8 @@ As a property:
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/12/30/Block创建/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/30/Block创建/" itemprop="commentsCount"></span>
+                <a href="/2016/01/12/UITextField/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/12/UITextField/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -286,7 +284,7 @@ As a property:
 
           
           
-             <span id="/2015/12/30/Block创建/" class="leancloud_visitors" data-flag-title="Block创建">
+             <span id="/2016/01/12/UITextField/" class="leancloud_visitors" data-flag-title="UITextField">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -306,20 +304,10 @@ As a property:
       
 
       
-        <h1 id="OC_u4E2D_u5982_u4F55_u5B9A_u4E49_u4E00_u4E2ABlock_3F"><a href="#OC_u4E2D_u5982_u4F55_u5B9A_u4E49_u4E00_u4E2ABlock_3F" class="headerlink" title="OC中如何定义一个Block?"></a>OC中如何定义一个Block?</h1><p>As a local variable:</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">returnType (^blockName)(parameterTypes) = ^returnType(parameters) &#123;...&#125;;</span><br></pre></td></tr></table></figure>
-<p>As a property:</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) returnType (^blockName)(parameterTypes);</span><br></pre></td></tr></table></figure>
-<p>As a method parameter:</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)someMethodThatTakesABlock:(returnType (^)(parameterTypes))blockName;</span><br></pre></td></tr></table></figure>
-<p>As an argument to a method call:</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[someObject someMethodThatTakesABlock:^returnType (parameters) &#123;...&#125;];</span><br></pre></td></tr></table></figure>
-<p>As a typedef:</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> returnType (^TypeName)(parameterTypes);</span><br><span class="line">TypeName blockName = ^returnType(parameters) &#123;...&#125;;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>参考:<br><a href="http://fuckingblocksyntax.com" target="_blank" rel="external">http://fuckingblocksyntax.com</a><br><a href="http://goshdarnblocksyntax.com" target="_blank" rel="external">http://goshdarnblocksyntax.com</a></p>
-</blockquote>
-
+        <h2 id="u660E_u6697_u6587_u5BC6_u7801_u5207_u6362_u65F6_u5149_u6807_u4F4D_u7F6E_u4E0D_u5BF9"><a href="#u660E_u6697_u6587_u5BC6_u7801_u5207_u6362_u65F6_u5149_u6807_u4F4D_u7F6E_u4E0D_u5BF9" class="headerlink" title="明暗文密码切换时光标位置不对"></a>明暗文密码切换时光标位置不对</h2><img src="/2016/01/12/UITextField/mima.jpeg" alt="mima" title="mima">
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">解决方案:在切换明文暗文的方法上写入 </span><br><span class="line">[<span class="keyword">self</span><span class="variable">.oldPwdTextField</span> becomeFirstResponder];</span><br></pre></td></tr></table></figure>
+<h2 id="u52A0_u5165_u4E86scrollView_u5BFC_u81F4_2C_u76D1_u542C_u952E_u76D8_u9000_u51FA_u5931_u6548"><a href="#u52A0_u5165_u4E86scrollView_u5BFC_u81F4_2C_u76D1_u542C_u952E_u76D8_u9000_u51FA_u5931_u6548" class="headerlink" title="加入了scrollView导致,监听键盘退出失效"></a>加入了scrollView导致,监听键盘退出失效</h2><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">解决方案:给scrollView增加一个分类,并重写以下几个方法</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)touchesBegan:(<span class="built_in">NSSet</span> *)touches withEvent:(<span class="built_in">UIEvent</span> *)event &#123;</span><br><span class="line">    [[<span class="keyword">self</span> nextResponder] touchesBegan:touches withEvent:event];</span><br><span class="line">    [<span class="keyword">super</span> touchesBegan:touches withEvent:event];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-(<span class="keyword">void</span>)touchesMoved:(<span class="built_in">NSSet</span> *)touches withEvent:(<span class="built_in">UIEvent</span> *)event &#123;</span><br><span class="line">    [[<span class="keyword">self</span> nextResponder] touchesMoved:touches withEvent:event];</span><br><span class="line">    [<span class="keyword">super</span> touchesMoved:touches withEvent:event];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)touchesEnded:(<span class="built_in">NSSet</span> *)touches withEvent:(<span class="built_in">UIEvent</span> *)event &#123;</span><br><span class="line">    [[<span class="keyword">self</span> nextResponder] touchesEnded:touches withEvent:event];</span><br><span class="line">    [<span class="keyword">super</span> touchesEnded:touches withEvent:event];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="u9650_u5236UITextField_u5185_u53EA_u80FD_u8F93_u51650_7E9_u7684_u6570_u5B57"><a href="#u9650_u5236UITextField_u5185_u53EA_u80FD_u8F93_u51650_7E9_u7684_u6570_u5B57" class="headerlink" title="限制UITextField内只能输入0~9的数字"></a>限制UITextField内只能输入0~9的数字</h2><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)textField:(<span class="built_in">UITextField</span> *)textField shouldChangeCharactersInRange:(<span class="built_in">NSRange</span>)range replacementString:(<span class="built_in">NSString</span> *)string &#123;</span><br><span class="line">    <span class="keyword">return</span> [<span class="keyword">self</span> validateNumber:string];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">BOOL</span>)validateNumber:(<span class="built_in">NSString</span>*)number &#123;</span><br><span class="line">    <span class="built_in">BOOL</span> res = <span class="literal">YES</span>;</span><br><span class="line">    <span class="built_in">NSCharacterSet</span>* tmpSet = [<span class="built_in">NSCharacterSet</span> characterSetWithCharactersInString:<span class="string">@"0123456789"</span>];</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; number<span class="variable">.length</span>) &#123;</span><br><span class="line">        <span class="built_in">NSString</span> * string = [number substringWithRange:<span class="built_in">NSMakeRange</span>(i, <span class="number">1</span>)];</span><br><span class="line">        <span class="built_in">NSRange</span> range = [string rangeOfCharacterFromSet:tmpSet];</span><br><span class="line">        <span class="keyword">if</span> (range<span class="variable">.length</span> == <span class="number">0</span>) &#123;</span><br><span class="line">            res = <span class="literal">NO</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">当然还可以将键盘设置为</span><br><span class="line">textField<span class="variable">.keyboardType</span> = <span class="built_in">UIKeyboardTypeNumberPad</span>;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -330,16 +318,16 @@ As a property:
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/30/博客推荐/" rel="next" title="博客推荐">
-                <i class="fa fa-chevron-left"></i> 博客推荐
+              <a href="/2016/01/12/IOS知识汇总/" rel="next" title="IOS知识汇总">
+                <i class="fa fa-chevron-left"></i> IOS知识汇总
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/12/30/IJKMediaPlayer静态库制作/" rel="prev" title="IJKMediaPlayer静态库制作">
-                IJKMediaPlayer静态库制作 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/01/12/UITextView/" rel="prev" title="UITextView">
+                UITextView <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -355,10 +343,10 @@ As a property:
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/12/30/Block创建/"
-     data-title="Block创建"
+        <div class="ds-share flat" data-thread-key="2016/01/12/UITextField/"
+     data-title="UITextField"
      data-content=""
-     data-url="http://nstimer.cn/2015/12/30/Block创建/">
+     data-url="http://nstimer.cn/2016/01/12/UITextField/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -388,8 +376,8 @@ As a property:
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/12/30/Block创建/"
-           data-title="Block创建" data-url="http://nstimer.cn/2015/12/30/Block创建/">
+      <div class="ds-thread" data-thread-key="2016/01/12/UITextField/"
+           data-title="UITextField" data-url="http://nstimer.cn/2016/01/12/UITextField/">
       </div>
     
   </div>
@@ -528,7 +516,7 @@ As a property:
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OC_u4E2D_u5982_u4F55_u5B9A_u4E49_u4E00_u4E2ABlock_3F"><span class="nav-number">1.</span> <span class="nav-text">OC中如何定义一个Block?</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u660E_u6697_u6587_u5BC6_u7801_u5207_u6362_u65F6_u5149_u6807_u4F4D_u7F6E_u4E0D_u5BF9"><span class="nav-number">1.</span> <span class="nav-text">明暗文密码切换时光标位置不对</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u52A0_u5165_u4E86scrollView_u5BFC_u81F4_2C_u76D1_u542C_u952E_u76D8_u9000_u51FA_u5931_u6548"><span class="nav-number">2.</span> <span class="nav-text">加入了scrollView导致,监听键盘退出失效</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u9650_u5236UITextField_u5185_u53EA_u80FD_u8F93_u51650_7E9_u7684_u6570_u5B57"><span class="nav-number">3.</span> <span class="nav-text">限制UITextField内只能输入0~9的数字</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

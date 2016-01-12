@@ -7,8 +7,48 @@
     <link>http://nstimer.cn/</link>
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     <description><![CDATA[人生如戏，全靠心细]]></description>
-    <pubDate>Tue, 12 Jan 2016 04:58:21 GMT</pubDate>
+    <pubDate>Tue, 12 Jan 2016 12:03:49 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title><![CDATA[UITextView]]></title>
+      <link>http://nstimer.cn/2016/01/12/UITextView/</link>
+      <guid>http://nstimer.cn/2016/01/12/UITextView/</guid>
+      <pubDate>Tue, 12 Jan 2016 11:50:27 GMT</pubDate>
+      <description>
+      <![CDATA[<h2 id="u8BBE_u7F6E_u884C_u95F4_u8DDD"><a href="#u8BBE_u7F6E_u884C_u95F4_u8DDD" class="headerlink" title="设置行间距"></a>设置行间距</h2><figure class]]>
+      </description>
+      <content:encoded><![CDATA[<h2 id="u8BBE_u7F6E_u884C_u95F4_u8DDD"><a href="#u8BBE_u7F6E_u884C_u95F4_u8DDD" class="headerlink" title="设置行间距"></a>设置行间距</h2><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSMutableParagraphStyle</span> *paragraphStyle = [[<span class="built_in">NSMutableParagraphStyle</span> alloc] init];</span><br><span class="line">paragraphStyle<span class="variable">.lineSpacing</span> = <span class="number">5</span>;<span class="comment">// 字体的行间距</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">NSDictionary</span> *attributes = @&#123;</span><br><span class="line">                             <span class="built_in">NSFontAttributeName</span>:[<span class="built_in">UIFont</span> systemFontOfSize:<span class="number">12</span>],</span><br><span class="line">                             <span class="built_in">NSParagraphStyleAttributeName</span>:paragraphStyle,</span><br><span class="line">                             <span class="built_in">NSForegroundColorAttributeName</span> : XWColor(<span class="number">140</span>, <span class="number">140</span>, <span class="number">140</span>)</span><br><span class="line">                             &#125;;</span><br><span class="line">textView<span class="variable">.attributedText</span> = [[<span class="built_in">NSAttributedString</span> alloc] initWithString:textView<span class="variable">.text</span> attributes:attributes];</span><br></pre></td></tr></table></figure>
+<h2 id="u8BBE_u7F6E_u6587_u672C_u5BB9_u5668_u5927_u5C0F"><a href="#u8BBE_u7F6E_u6587_u672C_u5BB9_u5668_u5927_u5C0F" class="headerlink" title="设置文本容器大小"></a>设置文本容器大小</h2><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">textView<span class="variable">.textContainerInset</span> = <span class="built_in">UIEdgeInsetsMake</span>(<span class="number">7</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">7</span>);</span><br></pre></td></tr></table></figure>]]></content:encoded>
+      <comments>http://nstimer.cn/2016/01/12/UITextView/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title><![CDATA[UITextField]]></title>
+      <link>http://nstimer.cn/2016/01/12/UITextField/</link>
+      <guid>http://nstimer.cn/2016/01/12/UITextField/</guid>
+      <pubDate>Tue, 12 Jan 2016 11:50:12 GMT</pubDate>
+      <description>
+      <![CDATA[<h2 id="u660E_u6697_u6587_u5BC6_u7801_u5207_u6362_u65F6_u5149_u6807_u4F4D_u7F6E_u4E0D_u5BF9"><a href="#u660E_u6697_u6587_u5BC6_u7801_u5207_u]]>
+      </description>
+      <content:encoded><![CDATA[<h2 id="u660E_u6697_u6587_u5BC6_u7801_u5207_u6362_u65F6_u5149_u6807_u4F4D_u7F6E_u4E0D_u5BF9"><a href="#u660E_u6697_u6587_u5BC6_u7801_u5207_u6362_u65F6_u5149_u6807_u4F4D_u7F6E_u4E0D_u5BF9" class="headerlink" title="明暗文密码切换时光标位置不对"></a>明暗文密码切换时光标位置不对</h2><img src="/2016/01/12/UITextField/mima.jpeg" alt="mima" title="mima">
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">解决方案:在切换明文暗文的方法上写入 </span><br><span class="line">[<span class="keyword">self</span><span class="variable">.oldPwdTextField</span> becomeFirstResponder];</span><br></pre></td></tr></table></figure>
+<h2 id="u52A0_u5165_u4E86scrollView_u5BFC_u81F4_2C_u76D1_u542C_u952E_u76D8_u9000_u51FA_u5931_u6548"><a href="#u52A0_u5165_u4E86scrollView_u5BFC_u81F4_2C_u76D1_u542C_u952E_u76D8_u9000_u51FA_u5931_u6548" class="headerlink" title="加入了scrollView导致,监听键盘退出失效"></a>加入了scrollView导致,监听键盘退出失效</h2><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">解决方案:给scrollView增加一个分类,并重写以下几个方法</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)touchesBegan:(<span class="built_in">NSSet</span> *)touches withEvent:(<span class="built_in">UIEvent</span> *)event &#123;</span><br><span class="line">    [[<span class="keyword">self</span> nextResponder] touchesBegan:touches withEvent:event];</span><br><span class="line">    [<span class="keyword">super</span> touchesBegan:touches withEvent:event];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-(<span class="keyword">void</span>)touchesMoved:(<span class="built_in">NSSet</span> *)touches withEvent:(<span class="built_in">UIEvent</span> *)event &#123;</span><br><span class="line">    [[<span class="keyword">self</span> nextResponder] touchesMoved:touches withEvent:event];</span><br><span class="line">    [<span class="keyword">super</span> touchesMoved:touches withEvent:event];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)touchesEnded:(<span class="built_in">NSSet</span> *)touches withEvent:(<span class="built_in">UIEvent</span> *)event &#123;</span><br><span class="line">    [[<span class="keyword">self</span> nextResponder] touchesEnded:touches withEvent:event];</span><br><span class="line">    [<span class="keyword">super</span> touchesEnded:touches withEvent:event];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="u9650_u5236UITextField_u5185_u53EA_u80FD_u8F93_u51650_7E9_u7684_u6570_u5B57"><a href="#u9650_u5236UITextField_u5185_u53EA_u80FD_u8F93_u51650_7E9_u7684_u6570_u5B57" class="headerlink" title="限制UITextField内只能输入0~9的数字"></a>限制UITextField内只能输入0~9的数字</h2><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)textField:(<span class="built_in">UITextField</span> *)textField shouldChangeCharactersInRange:(<span class="built_in">NSRange</span>)range replacementString:(<span class="built_in">NSString</span> *)string &#123;</span><br><span class="line">    <span class="keyword">return</span> [<span class="keyword">self</span> validateNumber:string];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">BOOL</span>)validateNumber:(<span class="built_in">NSString</span>*)number &#123;</span><br><span class="line">    <span class="built_in">BOOL</span> res = <span class="literal">YES</span>;</span><br><span class="line">    <span class="built_in">NSCharacterSet</span>* tmpSet = [<span class="built_in">NSCharacterSet</span> characterSetWithCharactersInString:<span class="string">@"0123456789"</span>];</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; number<span class="variable">.length</span>) &#123;</span><br><span class="line">        <span class="built_in">NSString</span> * string = [number substringWithRange:<span class="built_in">NSMakeRange</span>(i, <span class="number">1</span>)];</span><br><span class="line">        <span class="built_in">NSRange</span> range = [string rangeOfCharacterFromSet:tmpSet];</span><br><span class="line">        <span class="keyword">if</span> (range<span class="variable">.length</span> == <span class="number">0</span>) &#123;</span><br><span class="line">            res = <span class="literal">NO</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">当然还可以将键盘设置为</span><br><span class="line">textField<span class="variable">.keyboardType</span> = <span class="built_in">UIKeyboardTypeNumberPad</span>;</span><br></pre></td></tr></table></figure>]]></content:encoded>
+      <comments>http://nstimer.cn/2016/01/12/UITextField/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title><![CDATA[IOS知识汇总]]></title>
+      <link>http://nstimer.cn/2016/01/12/IOS%E7%9F%A5%E8%AF%86%E6%B1%87%E6%80%BB/</link>
+      <guid>http://nstimer.cn/2016/01/12/IOS%E7%9F%A5%E8%AF%86%E6%B1%87%E6%80%BB/</guid>
+      <pubDate>Tue, 12 Jan 2016 11:49:04 GMT</pubDate>
+      <description>
+      
+      </description>
+      <content:encoded></content:encoded>
+      <comments>http://nstimer.cn/2016/01/12/IOS%E7%9F%A5%E8%AF%86%E6%B1%87%E6%80%BB/#disqus_thread</comments>
+    </item>
     
     <item>
       <title><![CDATA[云主机]]></title>
@@ -49,11 +89,11 @@
 <h3 id="SVN_u521B_u5EFA"><a href="#SVN_u521B_u5EFA" class="headerlink" title="SVN创建"></a>SVN创建</h3><p>默认情况下，新建php应用之后，SVN是自动创建的，只需要checkout到本地就可以了。</p>
 <h3 id="SVN_u64CD_u4F5C"><a href="#SVN_u64CD_u4F5C" class="headerlink" title="SVN操作"></a>SVN操作</h3><p>命令行操作请看此处<a href="http://zhengkun.readthedocs.org/zh_CN/latest/2014/02/07/svn-usage/" target="_blank" rel="external">http://zhengkun.readthedocs.org/zh_CN/latest/2014/02/07/svn-usage/</a></p>
 <h2 id="u76F8_u5173_u914D_u7F6E"><a href="#u76F8_u5173_u914D_u7F6E" class="headerlink" title="相关配置"></a>相关配置</h2><h3 id="wordpress_u914D_u7F6E"><a href="#wordpress_u914D_u7F6E" class="headerlink" title="wordpress配置"></a>wordpress配置</h3><p>将wordpress自带的<code>wp-config-sample.php</code>重命名为<code>wp-config.php</code>，并将相关内容替换为上面新建的数据库的相关内容：</p>
-
+<img src="/2016/01/11/阿里ACE搭建wordpress/config.jpg" alt="config" title="config">
 <blockquote>
 <p>这里特别注意，在修改<code>wp-config.php</code>文件时，要注意英文<code>&#39;</code>和中文<code>‘</code>,这会导致php报语法错误。</p>
 </blockquote>
-<h2 id="u5927_u529F_u544A_u6210"><a href="#u5927_u529F_u544A_u6210" class="headerlink" title="大功告成"></a>大功告成</h2><p>访问你创建应用时的二级域名<code>xxx.aliyun.com</code>，可以看到如下内容：<br></p>
+<h2 id="u5927_u529F_u544A_u6210"><a href="#u5927_u529F_u544A_u6210" class="headerlink" title="大功告成"></a>大功告成</h2><p>访问你创建应用时的二级域名<code>xxx.aliyun.com</code>，可以看到如下内容：<br><img src="/2016/01/11/阿里ACE搭建wordpress/wordpress.jpg" alt="wordpress" title="wordpress"></p>
 <blockquote>
 <p><a href="http://bbs.aliyun.com/read/170142.html?spm=5176.bbsr262159.0.0.eozbuC" target="_blank" rel="external">http://bbs.aliyun.com/read/170142.html?spm=5176.bbsr262159.0.0.eozbuC</a></p>
 </blockquote>
