@@ -7,8 +7,22 @@
     <link>http://nstimer.cn/</link>
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     <description><![CDATA[人生如戏，全靠心细]]></description>
-    <pubDate>Tue, 12 Jan 2016 12:49:47 GMT</pubDate>
+    <pubDate>Tue, 12 Jan 2016 13:36:07 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title><![CDATA[IOS必备第三方库]]></title>
+      <link>http://nstimer.cn/2016/01/12/IOS%E5%BF%85%E5%A4%87%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/</link>
+      <guid>http://nstimer.cn/2016/01/12/IOS%E5%BF%85%E5%A4%87%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/</guid>
+      <pubDate>Tue, 12 Jan 2016 13:06:48 GMT</pubDate>
+      <description>
+      <![CDATA[利用第三方库可以大大加快开发效率，这里总结了一些iOS开发过程中必须使用的第三方库，帮助你高效开发]]>
+      
+      </description>
+      <content:encoded><![CDATA[<h2 id="Harpy"><a href="#Harpy" class="headerlink" title="Harpy"></a>Harpy</h2><p><a href="https://github.com/ArtSabintsev/Harpy" target="_blank" rel="external"><code>Harpy</code></a>是一个版本检测库，帮助你将本地APP版本号和Appstore的版本号进行对比，决定是否需要更新。<br>他能够准确区分<code>1,0</code>、<code>1.0.0</code>以及<code>1.0.0.0</code>形式的版本号。<br>具体讲解和操作可以参考以下网址<a href="http://www.jianshu.com/p/36b5db4ab16e" target="_blank" rel="external">http://www.jianshu.com/p/36b5db4ab16e</a></p>
+]]></content:encoded>
+      <comments>http://nstimer.cn/2016/01/12/IOS%E5%BF%85%E5%A4%87%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/#disqus_thread</comments>
+    </item>
     
     <item>
       <title><![CDATA[Xcode插件详解]]></title>
@@ -1024,22 +1038,6 @@ $ npm install
       <content:encoded><![CDATA[<h1 id="u4E2A_u4EBA_u535A_u5BA2_u642D_u5EFA"><a href="#u4E2A_u4EBA_u535A_u5BA2_u642D_u5EFA" class="headerlink" title="个人博客搭建"></a>个人博客搭建</h1><p>鉴于现在博客的搭建形式很多，如果都放到这篇文章来讲显得比较冗余。所以这里只是做了一个目录，大家可以在这里查看各自想了解的内容。</p>
 <h2 id="u535A_u5BA2_u642D_u5EFA_u5E73_u53F0"><a href="#u535A_u5BA2_u642D_u5EFA_u5E73_u53F0" class="headerlink" title="博客搭建平台"></a>博客搭建平台</h2><h3 id="Wordpress"><a href="#Wordpress" class="headerlink" title="Wordpress"></a>Wordpress</h3><h3 id="Jeklly"><a href="#Jeklly" class="headerlink" title="Jeklly"></a>Jeklly</h3><h3 id="Octopress"><a href="#Octopress" class="headerlink" title="Octopress"></a>Octopress</h3><h3 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a><a href="./使用Hexo搭建博客.md">Hexo</a></h3><h2 id="u57DF_u540D"><a href="#u57DF_u540D" class="headerlink" title="域名"></a>域名</h2><h2 id="u670D_u52A1_u5668"><a href="#u670D_u52A1_u5668" class="headerlink" title="服务器"></a>服务器</h2>]]></content:encoded>
       <comments>http://nstimer.cn/2015/12/24/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title><![CDATA[新的开始]]></title>
-      <link>http://nstimer.cn/2015/12/24/%E6%96%B0%E7%9A%84%E5%BC%80%E5%A7%8B/</link>
-      <guid>http://nstimer.cn/2015/12/24/%E6%96%B0%E7%9A%84%E5%BC%80%E5%A7%8B/</guid>
-      <pubDate>Thu, 24 Dec 2015 05:13:13 GMT</pubDate>
-      <description>
-      <![CDATA[<p>很久之前就有写博客的想法，一直未能成行。最近下定决心，一定要把博客建好。<br>事情的起因还是从翻墙开始。我是个爱折腾的人，在百度中搜索翻墙的过程中，无意间发现了VPS这个概念，于是就好好研究了下。这也为现在写博客打下了基础。</p>
-<p>很久没有写东西了，总感觉缺乏思路]]>
-      </description>
-      <content:encoded><![CDATA[<p>很久之前就有写博客的想法，一直未能成行。最近下定决心，一定要把博客建好。<br>事情的起因还是从翻墙开始。我是个爱折腾的人，在百度中搜索翻墙的过程中，无意间发现了VPS这个概念，于是就好好研究了下。这也为现在写博客打下了基础。</p>
-<p>很久没有写东西了，总感觉缺乏思路，有时候感觉有好多话想说，但就是不知道从何说起。这次恰好借助这个博客，让自己从屌丝蜕变为文艺青年，开始翻身之路。</p>
-<p>这次恰好是圣诞节（2015-12-24），这是一个新的开始！</p>
-]]></content:encoded>
-      <comments>http://nstimer.cn/2015/12/24/%E6%96%B0%E7%9A%84%E5%BC%80%E5%A7%8B/#disqus_thread</comments>
     </item>
     
   </channel>
