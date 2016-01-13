@@ -67,7 +67,7 @@
 <meta property="og:description" content="Xcode插件相关的文章，你只需要看这个就够了">
 <meta property="og:image" content="http://nstimer.cn/2016/01/12/Xcode插件详解/menu@2x.png">
 <meta property="og:image" content="http://nstimer.cn/2016/01/12/Xcode插件详解/screenshot@2x.png">
-<meta property="og:updated_time" content="2016-01-12T12:49:47.000Z">
+<meta property="og:updated_time" content="2016-01-13T06:56:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Xcode插件详解">
 <meta name="twitter:description" content="Xcode插件相关的文章，你只需要看这个就够了">
@@ -336,6 +336,9 @@
 <h4 id="u89E3_u51B3_u529E_u6CD5_uFF1A"><a href="#u89E3_u51B3_u529E_u6CD5_uFF1A" class="headerlink" title="解决办法："></a>解决办法：</h4><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//先获取Xcode的UUID：</span></span><br><span class="line"></span><br><span class="line">defaults <span class="keyword">read</span> <span class="regexp">/Applications/</span>Xcode.app<span class="regexp">/Contents/I</span>nfo DVTPlugInCompatibilityUUID</span><br><span class="line"></span><br><span class="line"><span class="comment">//再进入插件目录：</span></span><br><span class="line">~<span class="regexp">/Library/</span>Application Support<span class="regexp">/Developer/</span>Shared<span class="regexp">/Xcode/</span>Plugins</span><br><span class="line"> </span><br><span class="line"><span class="comment">//右键显示包内容，编辑Info.plist文件：</span></span><br><span class="line">展开DVTPlugInCompatibilityUUIDs 添加一个新的Item存储Xcode的UUID。</span><br></pre></td></tr></table></figure>
 <p>如果你觉得上述操作太麻烦，那么可以尝试这个操作：（批量更新插件的 DVTPlugInCompatibilityUUID 的命令（建议使用sudo方式执行））</p>
 <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">find</span> ~<span class="regexp">/Library/</span>Application\ Support<span class="regexp">/Developer/</span>Shared<span class="regexp">/Xcode/</span>Plug-ins -name Info.plist -maxdepth <span class="number">3</span> | xargs -I&#123;&#125; defaults <span class="keyword">write</span> &#123;&#125; DVTPlugInCompatibilityUUIDs -array-add `defaults <span class="keyword">read</span> <span class="regexp">/Applications/</span>Xcode.app<span class="regexp">/Contents/I</span>nfo DVTPlugInCompatibilityUUID`</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>特别注意最后的 `</p>
+</blockquote>
 <h3 id="u624B_u6B8B_u70B9_u51FB_u4E86_u201DSkip_Bundle_u201D_u80BF_u4E48_u529E"><a href="#u624B_u6B8B_u70B9_u51FB_u4E86_u201DSkip_Bundle_u201D_u80BF_u4E48_u529E" class="headerlink" title="手残点击了”Skip Bundle”肿么办"></a>手残点击了”Skip Bundle”肿么办</h3><ol>
 <li>进入插件目录(<code>~/Library/Application Support/Developer/Shared/Xcode/Plugins</code>)，选择已安装的插件如:VVDocumenter-Xcode,<strong>右键</strong>显示包内容,找到<code>info.plist</code></li>
 <li>删除<code>info.plist</code>最后一个与命令端里面同样的UUID号，一般都是会在最后一行，自己添加的那一行也要删除掉</li>

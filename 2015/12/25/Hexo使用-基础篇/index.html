@@ -65,7 +65,7 @@
 <meta property="og:url" content="http://nstimer.cn/2015/12/25/Hexo使用-基础篇/index.html">
 <meta property="og:site_name" content="思路人">
 <meta property="og:description" content="Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。">
-<meta property="og:updated_time" content="2015-12-26T17:45:02.000Z">
+<meta property="og:updated_time" content="2016-01-12T13:46:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo使用--基础篇">
 <meta name="twitter:description" content="Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。">
@@ -308,7 +308,11 @@
 <h4 id="u5B89_u88C5Hexo"><a href="#u5B89_u88C5Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h4><p>执行命令开始安装</p>
 </blockquote>
 <pre><code>$ npm install -g hexo-cli
-</code></pre><h4 id="u521B_u5EFA_u7AD9_u70B9_u6587_u4EF6_u5939"><a href="#u521B_u5EFA_u7AD9_u70B9_u6587_u4EF6_u5939" class="headerlink" title="创建站点文件夹"></a>创建站点文件夹</h4><p>在你比较方便的目录创建一个文件夹，并在这个文件夹下执行以下命令：</p>
+</code></pre><p>如果安装过程中出现以下错误</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123; [<span class="string">Error:</span> Cannot find module <span class="string">'./build/Release/DTraceProviderBindings'</span>] <span class="string">code:</span> <span class="string">'MODULE_NOT_FOUND'</span> &#125;</span><br><span class="line">&#123; [<span class="string">Error:</span> Cannot find module <span class="string">'./build/default/DTraceProviderBindings'</span>] <span class="string">code:</span> <span class="string">'MODULE_NOT_FOUND'</span> &#125;</span><br><span class="line">&#123; [<span class="string">Error:</span> Cannot find module <span class="string">'./build/Debug/DTraceProviderBindings'</span>] <span class="string">code:</span> <span class="string">'MODULE_NOT_FOUND'</span> &#125;</span><br></pre></td></tr></table></figure>
+<p>请尝试执行此命令进行安装</p>
+<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">sudo</span> <span class="comment">npm</span> <span class="comment">install</span> <span class="comment">hexo</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">no</span><span class="literal">-</span><span class="comment">optional</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">save</span></span><br></pre></td></tr></table></figure>
+<h4 id="u521B_u5EFA_u7AD9_u70B9_u6587_u4EF6_u5939"><a href="#u521B_u5EFA_u7AD9_u70B9_u6587_u4EF6_u5939" class="headerlink" title="创建站点文件夹"></a>创建站点文件夹</h4><p>在你比较方便的目录创建一个文件夹，并在这个文件夹下执行以下命令：</p>
 <pre><code>$ hexo init &lt;folder&gt;
 $ cd &lt;folder&gt;
 $ npm install
